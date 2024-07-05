@@ -537,7 +537,7 @@ a.footerlink {
 .path {
   stroke-dasharray: 2500;
   stroke-dashoffset: 1000;
-  animation: dash 3s linear;
+  animation: dash 2s linear;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   fill: none;
