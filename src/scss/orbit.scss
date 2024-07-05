@@ -1,0 +1,91 @@
+
+.orbit-container {
+  position: relative;
+  width: 300px; /* Размер самой большой орбиты */
+  height: 300px; /* Размер самой большой орбиты */
+  margin: auto; /* Центрирование контейнера */
+}
+
+.orbit {
+  border: 1px solid #FFF; /* Цвет границы */
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon {
+  position: absolute;
+  top: calc(50% - 14px);
+  left: 50%;
+  --orbit-size: 50px; /* Значение по умолчанию для маленькой орбиты */
+  transform-origin: 0 100%; /* Центр вращения в нижней точке иконки */
+  animation: orbit-animation 10s linear infinite; /* Анимация движения по орбите */
+
+}
+
+/* Пример для трех орбит разного размера */
+.orbit:nth-child(1) {
+  width: 100px; /* Размер маленькой орбиты */
+  height: 100px; /* Размер маленькой орбиты */
+  transform-origin: 50px 50px;
+}
+
+.orbit:nth-child(2) {
+  width: 200px; /* Размер средней орбиты */
+  height: 200px; /* Размер средней орбиты */
+  transform-origin: 100px 100px;
+}
+
+.orbit:nth-child(3) {
+  width: 300px; /* Размер большой орбиты */
+  height: 300px; /* Размер большой орбиты */
+  transform-origin: 150px 150px;
+}
+
+.icon:nth-child(1) {
+  /* Стили иконок для маленькой орбиты */
+  --orbit-size: 50px;
+}
+
+.icon:nth-child(2) {
+  /* Стили иконок для средней орбиты */
+  --orbit-size: 100px;
+}
+
+.icon:nth-child(3) {
+  /* Стили иконок для большой орбиты */
+  --orbit-size: 150px;
+}
+
+:root {
+  --orbit-size-1: 50px;  /* Размер маленькой орбиты */
+  --orbit-size-2: 100px; /* Размер средней орбиты */
+  --orbit-size-3: 150px; /* Размер большой орбиты */
+}
+
+@keyframes orbit-animation {
+  from {
+    transform: rotate(0deg) translateX(var(--orbit-size)) rotate(0deg);
+
+  }
+  to {
+    transform: rotate(360deg) translateX(var(--orbit-size)) rotate(-360deg);
+
+  }
+}
+
+.orbit:nth-child(1) .icon {
+  --orbit-size: var(--orbit-size-1); /* Маленькая орбита */
+  transform: translateY(-50%);
+
+}
+
+.orbit:nth-child(2) .icon {
+  --orbit-size: var(--orbit-size-2); /* Средняя орбита */
+}
+
+.orbit:nth-child(3) .icon {
+  --orbit-size: var(--orbit-size-3); /* Большая орбита */
+}

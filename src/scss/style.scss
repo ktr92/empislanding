@@ -166,6 +166,7 @@
 @import "./partials/mixins.scss";
 @import "./partials/animations.scss";
 @import "./modal.scss";
+@import "./orbit.scss";
 
 :root {
   --font-family: "Jost";
@@ -178,6 +179,11 @@
   position: absolute;
   top: 50px;
   z-index: 2;
+}
+.animOrbit{
+  position: absolute;
+  right: 0;
+  top: 50px;
 }
 
 .path {
