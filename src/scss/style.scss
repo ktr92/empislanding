@@ -78,19 +78,6 @@
   --font-family: "Montserrat";
 }
 
-#demo {
-  height: 1040px;
-}
-.animPhone {
-  position: absolute;
-  bottom: 50px;
-  z-index: 2;
-}
-.animOrbit{
-  position: absolute;
-  right: 0;
-  bottom: 50px;
-}
 
 .path {
   stroke-dasharray: 2500;
@@ -841,12 +828,6 @@ a.bordered {
   display: block;
 }
 
-#header {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  right: 0;
-}
 
 .header__items {
   display: flex;
@@ -993,3 +974,121 @@ color: #fff;
   }
 }
 
+h1 {
+  font-family: var(--font-family);
+font-weight: 700;
+font-size: 68px;
+line-height: 100%;
+color: #fff;
+margin-top: 0;
+margin-bottom: 0;
+}
+
+.heroblock__title {
+  margin-bottom: 44px;
+}
+
+.heroblock__text {
+  margin-bottom: 41px;
+  font-family: var(--second-family);
+font-weight: 500;
+font-size: 22px;
+line-height: 130%;
+color: #fff;
+}
+
+#header {
+  /* position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0; */
+}
+#demo {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.indexmain__wrapper {
+  height: calc(1040px - 167px);
+}
+.indexmain {
+  position: relative;
+}
+
+
+.animOrbit {
+  position: absolute;
+  right: -200px;
+}
+
+.indexmain__wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.heroblock__title {
+  max-width: 720px;
+}
+
+.heroblock {
+  width: 880px;
+  max-width: 100%;
+}
+
+#demo {
+  height: 1040px;
+}
+.animPhone {
+  bottom: 50px;
+  z-index: 2;
+  right: 0;
+}
+.animOrbit{
+/*   position: absolute; */
+  right: 0;
+  bottom: 50px;
+}
+.indexmain__form {
+  height: 100%;
+
+  position: relative;
+  width: 100%;
+}
+
+.diagonal {
+  height: 180px;
+  
+  margin-top: -180px;
+
+  svg {
+    width: 100%;
+    height: 180px;
+
+  }
+}
+
+.diagonal {
+  position: relative;
+  z-index: 2;
+}
+
+.mapstats {
+  background: #fff;
+  position: relative;
+}
+
+.animblock {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 985px;
+  height: 985px;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
