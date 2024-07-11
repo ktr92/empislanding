@@ -19,6 +19,28 @@ function closeByClickOutside(element, button) {
   })
 }
 
+function lazyLoadSrc(selector) {
+  const callback = (entries, observer) => {
+    entries.forEach(entry => {
+      const source = entry.target
+      if (entry.intersectionRatio > 0) {
+        if (!source.getAttribute('src')) {
+            source.setAttribute('src', source.dataset.src)
+            observer.unobserve(source)
+        }
+      }
+    })
+  }
+  const target = document.querySelectorAll(selector)
+  const options = {
+    threshold: 0.4
+  }
+  let obs = new IntersectionObserver(callback, options)
+  target.forEach(item => {
+    obs.observe(item)
+  }) 
+}
+
 $(document).ready(function () {
   new WOW().init();
 
@@ -66,4 +88,9 @@ $(document).ready(function () {
 
 window.addEventListener("load", function () {
   initFE()
+})
+
+document.addEventListener('DOMContentLoaded', function() {
+  lazyLoadSrc('img');
+  lazyLoadSrc('iframe');
 })
