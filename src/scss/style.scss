@@ -1045,9 +1045,10 @@ color: #fff;
   height: 1040px;
 }
 .animPhone {
-  bottom: 50px;
+  bottom: 0;
   z-index: 2;
-  right: 0;
+  right: -8px;
+  position: relative;
 }
 .animOrbit{
 /*   position: absolute; */
@@ -1093,4 +1094,11 @@ color: #fff;
   right: 0;
   bottom: 0;
   z-index: 1;
+}
+
+.imagePhone {
+  position: absolute;
+  z-index: 4;
+  bottom: 0;
+  opacity: 0;
 }

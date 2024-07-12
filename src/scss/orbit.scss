@@ -129,6 +129,12 @@
   }
 }
 
+.imagePhone {
+  -webkit-animation: 1s ease 0s normal forwards 1 fadein;
+  animation: 1s ease 0s normal forwards 1 fadein;
+  animation-delay: 1.8s;
+}
+
 .orbit:nth-child(1) .icon {
   --orbit-size: var(--orbit-size-1); /* Маленькая орбита */
   --orbit-deg-from: var(--orbit-deg-from); /* Большая орбита */
@@ -195,7 +201,7 @@
   -webkit-animation-delay: 1s; /* Safari 4.0 - 8.0 */
   -webkit-animation-duration: 3s;
   animation-duration: 3s;
-  animation-delay: 1s;
+  animation-delay: 2s;
   border: 1px solid var(--orbit-opacity-1);
 }
 
@@ -205,27 +211,27 @@
 
   border: 1px solid var(--orbit-opacity-2);
 
-  animation-delay: 1.3s;
+  animation-delay: 2.3s;
 }
 
 .orbit:nth-child(3) {
   /* Стили иконок для большой орбиты */
   -webkit-animation-delay: 1.6s; /* Safari 4.0 - 8.0 */
-  animation-delay: 1.6s;  
+  animation-delay: 2.6s;  
   border: 1px solid var(--orbit-opacity-3);
 
 }
 .orbit:nth-child(4) {
   /* Стили иконок для большой орбиты */
   -webkit-animation-delay: 1.9s; /* Safari 4.0 - 8.0 */
-  animation-delay: 1.9s;  
+  animation-delay: 2.9s;  
   border: 1px solid var(--orbit-opacity-4);
 
 }
 .orbit:nth-child(5) {
   /* Стили иконок для большой орбиты */
   -webkit-animation-delay: 2.2s; /* Safari 4.0 - 8.0 */
-  animation-delay: 2.2s;  
+  animation-delay: 3.2s;  
   border: 1px solid var(--orbit-opacity-5);
 
 }
