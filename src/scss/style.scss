@@ -1002,6 +1002,8 @@ color: #fff;
   width: 100%;
   left: 0;
   right: 0; */
+  position: relative;
+  z-index: 4;
 }
 #demo {
   position: fixed;

@@ -465,20 +465,30 @@ a.footerlink {
   --orbit-size-4: calc(885px / 2);
   --orbit-size-5: calc(985px / 2);
   --orbit-deg-from: 0deg;
-  --orbit-deg-to: 360deg;
-  --orbit-deg-to-neg: -360deg;
-  --orbit-deg-from-5: 330deg;
-  --orbit-deg-to-5: -30deg;
-  --orbit-deg-to-neg-5: 30deg;
-  --orbit-deg-from-4: 200deg;
-  --orbit-deg-to-4: -160deg;
-  --orbit-deg-to-neg-4: 160deg;
-  --orbit-deg-from-3: 120deg;
-  --orbit-deg-to-3: -240deg;
-  --orbit-deg-to-neg-3: 240deg;
+  --orbit-deg-to: 0deg;
+  --orbit-deg-inner-from: 0;
+  --orbit-deg-inner-to: -360deg;
+  --orbit-deg-from-5: 300deg;
+  --orbit-deg-to-5: 660deg;
+  --orbit-deg-inner-from-5: -300deg;
+  --orbit-deg-inner-to-5: -660deg;
+  --orbit-deg-from-4: 120deg;
+  --orbit-deg-to-4: 480deg;
+  --orbit-deg-inner-from-4: -120deg;
+  --orbit-deg-inner-to-4: -480deg;
+  --orbit-deg-from-3: 200deg;
+  --orbit-deg-to-3: 560deg;
+  --orbit-deg-inner-from-3: -200deg;
+  --orbit-deg-inner-to-3: -560deg;
   --orbit-deg-from-2: 30deg;
-  --orbit-deg-to-2: -330deg;
-  --orbit-deg-to-neg-2: 330deg; }
+  --orbit-deg-to-2: 390deg;
+  --orbit-deg-inner-from-2: -30deg;
+  --orbit-deg-inner-to-2: -390deg;
+  --orbit-opacity-1: rgba(255, 255, 255, 0.5);
+  --orbit-opacity-2: rgba(255, 255, 255, 0.4);
+  --orbit-opacity-3: rgba(255, 255, 255, 0.3);
+  --orbit-opacity-4: rgba(255, 255, 255, 0.2);
+  --orbit-opacity-5: rgba(255, 255, 255, 0.1); }
 
 .orbit-container {
   position: relative;
@@ -490,7 +500,7 @@ a.footerlink {
   /* Центрирование контейнера */ }
 
 .orbit {
-  border: 1px solid #fff;
+  border: 1px solid var(--orbit-opacity-1);
   /* Цвет границы */
   border-radius: 50%;
   position: absolute;
@@ -559,9 +569,9 @@ a.footerlink {
 } */
 @keyframes orbit-animation {
   from {
-    transform: rotate(var(--orbit-deg-from)) translateX(var(--orbit-size)) rotate(var(--orbit-deg-from)); }
+    transform: rotate(var(--orbit-deg-from)) translateX(var(--orbit-size)) rotate(var(--orbit-deg-inner-from)); }
   to {
-    transform: rotate(var(--orbit-deg-to)) translateX(var(--orbit-size)) rotate(var(--orbit-deg-to-neg)); } }
+    transform: rotate(var(--orbit-deg-to)) translateX(var(--orbit-size)) rotate(var(--orbit-deg-inner-to)); } }
 
 @keyframes fadein {
   from {
@@ -585,11 +595,13 @@ a.footerlink {
   /* Большая орбита */
   --orbit-deg-to: var(--orbit-deg-to-2);
   /* Большая орбита */
-  --orbit-deg-to-neg: var(--orbit-deg-to-neg-2);
-  /* Большая орбита */
+  --orbit-deg-inner-from: var(--orbit-deg-inner-from-2);
+  --orbit-deg-inner-to: var(--orbit-deg-inner-to-2);
   transform: translateY(-50%);
   top: calc(50% - 38px);
-  left: calc(50% - 38px); }
+  left: calc(50% - 38px);
+  /*   -webkit-animation-duration: 13s;
+  animation-duration: 13s; */ }
 
 .orbit:nth-child(3) .icon {
   --orbit-size: var(--orbit-size-3);
@@ -598,11 +610,13 @@ a.footerlink {
   /* Большая орбита */
   --orbit-deg-to: var(--orbit-deg-to-3);
   /* Большая орбита */
-  --orbit-deg-to-neg: var(--orbit-deg-to-neg-3);
-  /* Большая орбита */
+  --orbit-deg-inner-from: var(--orbit-deg-inner-from-3);
+  --orbit-deg-inner-to: var(--orbit-deg-inner-to-3);
   transform: translateY(-50%);
   top: calc(50% - 30px);
-  left: calc(50% - 30px); }
+  left: calc(50% - 30px);
+  /*   -webkit-animation-duration: 9s;
+  animation-duration: 9s; */ }
 
 .orbit:nth-child(4) .icon {
   --orbit-size: var(--orbit-size-4);
@@ -611,11 +625,13 @@ a.footerlink {
   /* Большая орбита */
   --orbit-deg-to: var(--orbit-deg-to-4);
   /* Большая орбита */
-  --orbit-deg-to-neg: var(--orbit-deg-to-neg-4);
-  /* Большая орбита */
+  --orbit-deg-inner-from: var(--orbit-deg-inner-from-4);
+  --orbit-deg-inner-to: var(--orbit-deg-inner-to-4);
   transform: translateY(-50%);
   top: calc(50% -22px);
-  left: calc(50% - 22px); }
+  left: calc(50% - 22px);
+  /*   -webkit-animation-duration: 15s;
+  animation-duration: 15s; */ }
 
 .orbit:nth-child(5) .icon {
   --orbit-size: var(--orbit-size-5);
@@ -624,8 +640,10 @@ a.footerlink {
   /* Большая орбита */
   --orbit-deg-to: var(--orbit-deg-to-5);
   /* Большая орбита */
-  --orbit-deg-to-neg: var(--orbit-deg-to-neg-5);
-  /* Большая орбита */
+  --orbit-deg-inner-from: var(--orbit-deg-inner-from-5);
+  --orbit-deg-inner-to: var(--orbit-deg-inner-to-5);
+  /*   -webkit-animation-duration: 13s;
+  animation-duration: 13s; */
   transform: translateY(-50%);
   top: calc(50% - 15px);
   left: calc(50% - 15px); }
@@ -636,33 +654,36 @@ a.footerlink {
   /* Safari 4.0 - 8.0 */
   -webkit-animation-duration: 3s;
   animation-duration: 3s;
-  animation-delay: 1s; }
+  animation-delay: 1s;
+  border: 1px solid var(--orbit-opacity-1); }
 
 .orbit:nth-child(2) {
   /* Стили иконок для средней орбиты */
   -webkit-animation-delay: 1.3s;
   /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: 3s;
-  animation-duration: 3s;
+  border: 1px solid var(--orbit-opacity-2);
   animation-delay: 1.3s; }
 
 .orbit:nth-child(3) {
   /* Стили иконок для большой орбиты */
   -webkit-animation-delay: 1.6s;
   /* Safari 4.0 - 8.0 */
-  animation-delay: 1.6s; }
+  animation-delay: 1.6s;
+  border: 1px solid var(--orbit-opacity-3); }
 
 .orbit:nth-child(4) {
   /* Стили иконок для большой орбиты */
   -webkit-animation-delay: 1.9s;
   /* Safari 4.0 - 8.0 */
-  animation-delay: 1.9s; }
+  animation-delay: 1.9s;
+  border: 1px solid var(--orbit-opacity-4); }
 
 .orbit:nth-child(5) {
   /* Стили иконок для большой орбиты */
   -webkit-animation-delay: 2.2s;
   /* Safari 4.0 - 8.0 */
-  animation-delay: 2.2s; }
+  animation-delay: 2.2s;
+  border: 1px solid var(--orbit-opacity-5); }
 
 :root {
   --font-family: "Montserrat"; }
@@ -1437,7 +1458,9 @@ h1 {
   /* position: absolute;
   width: 100%;
   left: 0;
-  right: 0; */ }
+  right: 0; */
+  position: relative;
+  z-index: 4; }
 
 #demo {
   position: fixed;
