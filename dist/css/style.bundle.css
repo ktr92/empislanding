@@ -1681,6 +1681,31 @@ form .check input[type=checkbox]:checked + label:after {
 .phoneform__checkbox {
   margin-top: 35px; }
 
+h2 {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 100%;
+  margin-top: 0;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 55px; }
+  h2:before {
+    content: url('data:image/svg+xml,<svg width="5" height="43" viewBox="0 0 5 43" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3L0 0V40L5 43V3Z" fill="%230EB1F2" /></svg>');
+    width: 5px;
+    height: 34px;
+    position: absolute;
+    left: 0;
+    transform: translateX(-50%);
+    top: 0; }
+
+.container {
+  padding-left: 0;
+  padding-right: 0; }
+
+.container_line {
+  border-left: 1px solid rgba(10, 37, 64, 0.07); }
+
 @media (max-width: 1023px) {
   h1 br, .heroblock__text br {
     display: none; } }
