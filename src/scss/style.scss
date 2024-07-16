@@ -1102,3 +1102,171 @@ color: #fff;
   bottom: 0;
   opacity: 0;
 }
+
+.phoneform {
+  position: absolute;
+  top: 87px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 314px;
+}
+.phoneform__wrapper {
+}
+.phoneform__title {
+  font-family: var(--font-family);
+font-weight: 700;
+font-size: 22px;
+line-height: 100%;
+text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.phoneform__item {
+margin-bottom: 36px;
+}
+.phoneform__label {
+  font-family: var(--font3);
+font-weight: 600;
+font-size: 14px;
+line-height: 100%;
+color: #0a2540;
+  margin-bottom: 10px;
+}
+.phoneform__input {
+
+  input {
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 7px;
+    height: 51px;
+    background: #f3f4f5;
+    padding: 0 23px;
+    font-family: var(--font3);
+font-weight: 600;
+font-size: 16px;
+line-height: 100%;
+color: #0a2540;
+  }
+}
+.phoneform__button {
+  margin-top: 43px;
+}
+.btn {
+}
+.btn_main {
+}
+.btn_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:  14px 0;
+
+  .btntext {
+    font-family: var(--font-family);
+font-weight: 700;
+font-size: 16px;
+line-height: 23px;
+color: #fff;
+    display: block;margin-right: 8px;
+  }
+
+  .btnicon {
+    position: relative;
+    overflow: hidden;
+    height: 23px;
+    .default {
+      position: relative;
+      top: 0;
+      left: 0;
+      transition: .5s ease;
+      fill: #fff;
+    }
+    .active {
+      position: absolute;
+      top: 100%;
+      left: -50%;
+      transition: .2s ease;
+      transform: translate(0);
+      fill: #2f69ff;
+    }
+  }
+
+  &:hover {
+    .btnicon {
+    .active {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: .5s ease;
+    }
+    .default {
+      top: -100%;
+      left: 100%;
+      transition: .5s ease;
+    }
+    }
+
+  }
+}
+.phoneform__checkbox {
+}
+.check {
+  line-height: 16px;
+
+}
+
+
+
+form .check label  {
+font-weight: 400;
+font-size: 9px;
+line-height: 19px;
+color: #455067;
+padding-left: 22px;
+position: relative;
+display: block;
+cursor: pointer;
+}
+form .check label a {
+  border-bottom: 1px solid #455067;
+
+  color: #455067;
+}
+
+form .check label a:hover {
+  border-bottom: none
+}
+
+form .check input[type=checkbox] {
+  display: none
+}
+
+form .check label:before {
+  background-color: $blue;
+  content: "";
+  height: 16px;
+  left: 0;
+  position: absolute;
+  width: 16px;
+  border-radius: 4px;
+  top: 0;
+}
+
+form .check input[type=checkbox]:checked+label:after {
+  content:  "";
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../img/check.svg);
+  height: 16px;
+left: 0;
+top: 0;
+  position: absolute;
+  width: 16px;
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.phoneform__checkbox {
+  margin-top: 35px;
+}
