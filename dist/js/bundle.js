@@ -67,14 +67,82 @@ function lazyLoadSrc(selector) {
 $(document).ready(function () {
   new WOW().init();
 
-  $('.siteslider__slider').slick({
+
+  var $status = $('.pagingInfo');
+  var $slickElement = $('.projects__slider');
+
+  $slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+    // no dots -> no slides
+    if(!slick.$dots){
+      return;
+    }
+    
+    //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+    var i = (currentSlide ? currentSlide : 0) + 1;
+    // use dots to get some count information
+    $status.html('<span class="pagingInfo_active">' + i + '</span>' + '<span class="pagingInfo_default">' + '/ ' +  (slick.$dots[0].children.length) + '</span>');
+  });
+
+  $slickElement.slick({
+    infinite: false,
+    slidesToShow: 1,
+    autoplay: false,
+    fade: true,
+    dots: true,
+     prevArrow: '.projects__left',
+    nextArrow: '.projects__right'
+  });
+
+ /*  $('.projects__slider').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     fade: true,
     infinite: false,
-    arrows: false,
+    prevArrow: '.projects__left',
+    nextArrow: '.projects__right'
+  }); */
 
-  });
+  var something = (function () {
+    var executed = false
+    return function () {
+      if (!executed) {
+        executed = true
+        $(".stats__number span").each(function () {
+          $(this)
+            .prop("Counter", 0)
+            .animate(
+              {
+                Counter: $(this).text(),
+              },
+              {
+                duration: 2000,
+                easing: "swing",
+                step: function (now) {
+                  $(this).text(Math.ceil(now))
+                },
+              }
+            )
+        })
+      }
+    }
+  })()
+
+  $(window).scroll(function () {
+    if ($(".stats").length) {
+      var top_of_element = $(".stats").offset().top
+      var bottom_of_element =
+        $(".stats").offset().top + $(".stats").outerHeight()
+      var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight()
+      var top_of_screen = $(window).scrollTop()
+
+      if (
+        bottom_of_screen > top_of_element &&
+        top_of_screen < bottom_of_element
+      ) {
+        something()
+      }
+    }
+  })
 
 
   $('#demo').gradient({
