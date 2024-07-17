@@ -44,6 +44,15 @@ function lazyLoadSrc(selector) {
 $(document).ready(function () {
   new WOW().init();
 
+  $('.siteslider__slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    infinite: false,
+    arrows: false,
+
+  });
+
 
   $('#demo').gradient({
     colors: ['#0CC4FB', '#2295F8', '#2858E4', '#193FAB']
