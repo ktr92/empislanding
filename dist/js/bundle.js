@@ -67,31 +67,39 @@ function lazyLoadSrc(selector) {
 $(document).ready(function () {
   new WOW().init();
 
+  function initSlider(selector, count, fade, nav, left, right) {
+    var $status = $(nav);
+    var $slickElement = $(selector);
+  
+    $slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+      // no dots -> no slides
+      if(!slick.$dots){
+        return;
+      }
+      
+      //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+      var i = (currentSlide ? currentSlide : 0) + 1;
+      // use dots to get some count information
+      $status.html('<span class="pagingInfo_active">' + i + '</span>' + '<span class="pagingInfo_default">' + '/ ' +  (slick.$dots[0].children.length) + '</span>');
+    });
+  
+    $slickElement.slick({
+      infinite: false,
+      slidesToShow: count,
+      slidesToScroll: 1,
+      autoplay: false,
+      fade: fade,
+      dots: true,
+       prevArrow: left,
+      nextArrow: right
+    });
+  };
 
-  var $status = $('.pagingInfo');
-  var $slickElement = $('.projects__slider');
+  initSlider('.projects__slider', 1, true, '.pagingInfo', '.projects__left', '.projects__right')
+  initSlider('.reviews__slider', 2, false, '.pagingInfo_reviews', '.reviews__left', '.reviews__right')
 
-  $slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
-    // no dots -> no slides
-    if(!slick.$dots){
-      return;
-    }
-    
-    //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
-    var i = (currentSlide ? currentSlide : 0) + 1;
-    // use dots to get some count information
-    $status.html('<span class="pagingInfo_active">' + i + '</span>' + '<span class="pagingInfo_default">' + '/ ' +  (slick.$dots[0].children.length) + '</span>');
-  });
 
-  $slickElement.slick({
-    infinite: false,
-    slidesToShow: 1,
-    autoplay: false,
-    fade: true,
-    dots: true,
-     prevArrow: '.projects__left',
-    nextArrow: '.projects__right'
-  });
+ 
 
  /*  $('.projects__slider').slick({
     slidesToShow: 1,

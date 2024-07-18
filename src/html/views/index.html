@@ -218,11 +218,11 @@
 
               <div class="projects__nav">
                 <span class="pagingInfo"></span>
-                <div class="projects__arrows">
-                  <div class="projects__left">
+                <div class="projects__arrows sliderarrows">
+                  <div class="projects__left sliderleft">
                     <img src="img/projects_right.svg" alt="">
                   </div><!-- /.projects__left -->
-                  <div class="projects__right">
+                  <div class="projects__right sliderright">
                     <img src="img/projects_right.svg" alt="">
 
                   </div><!-- /.projects__right -->
@@ -239,7 +239,7 @@
 
             <div class="projects__wrapper">
 
-              <div class="projects__sliderwrapper">
+              <div class="projects__sliderwrapper bs_slider">
                 <div class="projects__slider">
                   <div class="projects__slide">
                     <div class="projectcard">
@@ -349,180 +349,493 @@
           <div class="container container_line">
             <div class="prices__wrapper">
               <div class="offerblock__cards offerblock__cards_support">
-                <div class="cards cards_3">
-                  <div class="card card_caption">
-                    <div class="card__wrapper">
-                      <div class="card__content">
-                        <div class="card__main">
-                          <div class="card__title card__title_blue">&nbsp;</div>
-                          <div class="card__list card__list_row">
-                            <ul>
-                              <li>Включено часов:</li>
-                              <li>Стоимость часа:</li>
-                              <li>Скорость ответа менеджера:</li>
-                              <li>Рекомендации по развитию сайта:</li>
-                              <li>Перенос не отработанных часов:</li>
-                            </ul>
+                <div class="cardslist">
+                  <div class="card_info">
+                    <div class="card card_caption">
+                      <div class="card__wrapper">
+                        <div class="card__content">
+                          <div class="card__main">
+                            <div class="card__title card__title_blue">
+                              <h2>Наши тарифы</h2>
+                            </div>
+                            <div class="card__list card__list_row">
+                              <ul>
+                                <li>Включено часов</li>
+                                <li>Стоимость часа</li>
+                                <li>Скорость ответа менеджера</li>
+                                <li>Рекомендации по развитию сайта</li>
+                                <li>Перенос не отработанных часов</li>
+                              </ul>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="card slide-in-bottom wow" data-wow-delay="0.2s"
-                  
-                    data-wow-offset="0" data-wow-duration="1.5s">
-                    <div class="card__wrapper">
-                      <div class="card__content" id="bx_4665576_28">
-                        <div class="card__main">
-                          <div class="card__title card__title_blue">Базовый</div>
-                          <div class="card__list card__list_row">
-                            <ul>
-                              <li>
-                                <dd class="onlyMobile">Включено часов</dd>
-                                <dt>10 часов</dt>
-                              </li>
-                              <li>
-                                <dd class="onlyMobile">Стоимость часа</dd>
-                                <dt>3 000 <span class="rouble">₽</span></dt>
-                              </li>
-                              <li>
-                                <dd class="onlyMobile">Скорость ответа менеджера</dd>
-                                <dt>В течение часа</dt>
-                              </li>
-                              <li>
-                                <dd class="onlyMobile">Рекомендации по развитию сайта</dd>
-                                <dt>Нет</dt>
-                              </li>
-                              <li>
-                                <dd class="onlyMobile">Перенос не отработанных часов</dd>
-                                <dt>Нет</dt>
-                              </li>
-                            </ul>
+                    <div class="card_extra">
+                      <h2>Сколько стоит разовое обращение без абонентской платы?</h2>
+                      <div class="card_extravalue">
+                        3500 ₽ / ч
+                      </div><!-- /.card_extravalue -->
+                      <div class="card_extratext">(сроки на разовые задачи составляют от 3 до 5 рабочих дней)</div>
+                      <!-- /.card_extratext -->
+                    </div><!-- /.card_extra -->
+                  </div><!-- /.card_info -->
+                  <div class="cards cards_3 ">
+
+                    <div class="card slide-in-bottom wow" data-wow-delay="0.5s" data-wow-offset="0"
+                      data-wow-duration="1.5s">
+                      <div class="card__wrapper">
+                        <div class="card__content" id="bx_4665576_28">
+                          <div class="card__main">
+                            <div class="card__title card__title_blue">Базовый</div>
+                            <div class="card__list card__list_row">
+                              <ul>
+                                <li>
+                                  <dd class="onlyMobile">Включено часов</dd>
+                                  <dt>10 часов</dt>
+                                </li>
+                                <li>
+                                  <dd class="onlyMobile">Стоимость часа</dd>
+                                  <dt>3 000 <span class="rouble">₽</span></dt>
+                                </li>
+                                <li>
+                                  <dd class="onlyMobile">Скорость ответа менеджера</dd>
+                                  <dt>В течение часа</dt>
+                                </li>
+                                <li>
+                                  <dd class="onlyMobile">Рекомендации по развитию сайта</dd>
+                                  <dt>Нет</dt>
+                                </li>
+                                <li>
+                                  <dd class="onlyMobile">Перенос не отработанных часов</dd>
+                                  <dt>Нет</dt>
+                                </li>
+                              </ul>
+                            </div>
                           </div>
-                        </div>
-                        <div class="card__bottom">
                           <div class="card__price">
+                            <div class="card__price_old">
+                              36 000 ₽
+                            </div><!-- /.card__price_old -->
                             <span class="card__price-value">
-                              <dd class="onlyMobile">Стоимость абонентской платы</dd>
                               <dt>30 000 <span class="rouble">₽</span></dt>
                             </span>
+                          </div>
+                          <div class="card__button">
+                            <a href="" class="btn btn_main btn_icon ">
+                              <span class="btntext">Оставить заявку</span>
+                              <span class="btnicon">
+                                <img src="img/empisicon.svg" alt="" class="default">
+                                <img src="img/empisicon.svg" alt="" class="active">
+
+                              </span><!-- /.iconbtn -->
+                            </a>
                           </div>
                           <div class="card__link">
                             <a href="#modal__info28" data-toggle="modal" class="link_gray">В тариф также включено</a>
                           </div>
-                          <div class="card__button">
-                            <a href="#modal__order" data-toggle="modal" class="btn btn_small"
-                              data-service="Поддержка сайта">Оставить заявку</a>
-                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="card slide-in-bottom wow" data-wow-delay="0.3s"
-                   
-                    data-wow-offset="0" data-wow-duration="1.5s">
-                    <div class="card__wrapper">
-                      <div class="card__content" id="bx_4665576_85">
-                        <div class="card__main">
-                          <div class="card__title card__title_blue">Оптимальный</div>
-                          <div class="card__list card__list_row">
-                            <ul>
-                              <li>
-                                <dd class="onlyMobile">Включено часов</dd>
-                                <dt>20 часов</dt>
-                              </li>
-                              <li>
-                                <dd class="onlyMobile">Стоимость часа</dd>
-                                <dt>2 800 <span class="rouble">₽</span></dt>
-                              </li>
-                              <li>
-                                <dd class="onlyMobile">Скорость ответа менеджера</dd>
-                                <dt>До 15 мин</dt>
-                              </li>
-                              <li>
-                                <dd class="onlyMobile">Рекомендации по развитию сайта</dd>
-                                <dt>Да</dt>
-                              </li>
-                              <li>
-                                <dd class="onlyMobile">Перенос не отработанных часов</dd>
-                                <dt>Да</dt>
-                              </li>
-                            </ul>
+                    <div class="card card_central slide-in-bottom wow" data-wow-delay="0s" data-wow-offset="0"
+                      data-wow-duration="1.5s">
+                      <div class="card__wrapper">
+                        <div class="card__content" id="bx_4665576_85">
+                          <div class="card__main">
+                            <div class="card__title card__title_blue">Оптимальный</div>
+                            <div class="card__list card__list_row">
+                              <ul>
+                                <li>
+                                  <dd class="onlyMobile">Включено часов</dd>
+                                  <dt>20 часов</dt>
+                                </li>
+                                <li>
+                                  <dd class="onlyMobile">Стоимость часа</dd>
+                                  <dt>2 800 <span class="rouble">₽</span></dt>
+                                </li>
+                                <li>
+                                  <dd class="onlyMobile">Скорость ответа менеджера</dd>
+                                  <dt>До 15 мин</dt>
+                                </li>
+                                <li>
+                                  <dd class="onlyMobile">Рекомендации по развитию сайта</dd>
+                                  <dt>Да</dt>
+                                </li>
+                                <li>
+                                  <dd class="onlyMobile">Перенос не отработанных часов</dd>
+                                  <dt>Да</dt>
+                                </li>
+                              </ul>
+                            </div>
                           </div>
-                        </div>
-                        <div class="card__bottom">
                           <div class="card__price">
+                            <div class="card__price_old">
+                              66 000 ₽
+                            </div><!-- /.card__price_old -->
                             <span class="card__price-value">
-                              <dd class="onlyMobile">Стоимость абонентской платы</dd>
                               <dt>56 000 <span class="rouble">₽</span></dt>
                             </span>
+                          </div>
+                          <div class="card__button">
+                            <a href="" class="btn btn_main btn_icon btn_lg">
+                              <span class="btntext">Оставить заявку</span>
+                              <span class="btnicon">
+                                <img src="img/empisicon.svg" alt="" class="default">
+                                <img src="img/empisicon.svg" alt="" class="active">
+
+                              </span><!-- /.iconbtn -->
+                            </a>
                           </div>
                           <div class="card__link">
                             <a href="#modal__info85" data-toggle="modal" class="link_gray">В тариф также включено</a>
                           </div>
-                          <div class="card__button">
-                            <a href="#modal__order" data-toggle="modal" class="btn btn_small"
-                              data-service="Поддержка сайта">Оставить заявку</a>
-                          </div>
+
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="card slide-in-bottom wow" data-wow-delay="0.4s"
-                    
-                    data-wow-offset="0" data-wow-duration="1.5s">
-                    <div class="card__wrapper">
-                      <div class="card__content" id="bx_4665576_86">
-                        <div class="card__main">
-                          <div class="card__title card__title_blue">VIP</div>
-                          <div class="card__list card__list_row">
-                            <ul>
-                              <li>
-                                <dd class="onlyMobile">Включено часов</dd>
-                                <dt>40 часов</dt>
-                              </li>
-                              <li>
-                                <dd class="onlyMobile">Стоимость часа</dd>
-                                <dt>2500 <span class="rouble">₽</span></dt>
-                              </li>
-                              <li>
-                                <dd class="onlyMobile">Скорость ответа менеджера</dd>
-                                <dt>До 1 мин</dt>
-                              </li>
-                              <li>
-                                <dd class="onlyMobile">Рекомендации по развитию сайта</dd>
-                                <dt>Да</dt>
-                              </li>
-                              <li>
-                                <dd class="onlyMobile">Перенос не отработанных часов</dd>
-                                <dt>Да</dt>
-                              </li>
-                            </ul>
+                    <div class="card slide-in-bottom wow" data-wow-delay="0.5s" data-wow-offset="0"
+                      data-wow-duration="1.5s">
+                      <div class="card__wrapper">
+                        <div class="card__content" id="bx_4665576_86">
+                          <div class="card__main">
+                            <div class="card__title card__title_blue">VIP</div>
+                            <div class="card__list card__list_row">
+                              <ul>
+                                <li>
+                                  <dd class="onlyMobile">Включено часов</dd>
+                                  <dt>40 часов</dt>
+                                </li>
+                                <li>
+                                  <dd class="onlyMobile">Стоимость часа</dd>
+                                  <dt>2500 <span class="rouble">₽</span></dt>
+                                </li>
+                                <li>
+                                  <dd class="onlyMobile">Скорость ответа менеджера</dd>
+                                  <dt>До 1 мин</dt>
+                                </li>
+                                <li>
+                                  <dd class="onlyMobile">Рекомендации по развитию сайта</dd>
+                                  <dt>Да</dt>
+                                </li>
+                                <li>
+                                  <dd class="onlyMobile">Перенос не отработанных часов</dd>
+                                  <dt>Да</dt>
+                                </li>
+                              </ul>
+                            </div>
                           </div>
-                        </div>
-                        <div class="card__bottom">
                           <div class="card__price">
+                            <div class="card__price_old">
+                              120 000 ₽
+                            </div><!-- /.card__price_old -->
                             <span class="card__price-value">
-                              <dd class="onlyMobile">Стоимость абонентской платы</dd>
                               <dt>100 000 <span class="rouble">₽</span></dt>
                             </span>
+                          </div>
+                          <div class="card__button">
+                            <a href="" class="btn btn_main btn_icon ">
+                              <span class="btntext">Оставить заявку</span>
+                              <span class="btnicon">
+                                <img src="img/empisicon.svg" alt="" class="default">
+                                <img src="img/empisicon.svg" alt="" class="active">
+
+                              </span><!-- /.iconbtn -->
+                            </a>
                           </div>
                           <div class="card__link">
                             <a href="#modal__info86" data-toggle="modal" class="link_gray">В тариф также включено</a>
                           </div>
-                          <div class="card__button">
-                            <a href="#modal__order" data-toggle="modal" class="btn btn_small"
-                              data-service="Поддержка сайта">Оставить заявку</a>
-                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </div><!-- /.cardslist -->
               </div>
             </div><!-- /.prices__wrapper -->
           </div><!-- /.container container_line -->
         </div><!-- /.prices -->
+
+        <div class="fitches">
+          <div class="ellipse" id='ellipse_fitches_1'>
+            <img src="img/ellipse_projects_1.svg" alt="">
+          </div><!-- /.ellipse -->
+          <div class="container container_line">
+            <div class="fitches__wrapper">
+
+
+              <h2>Стандарты обслуживания</h2>
+              <div class="fitches__items">
+                <div class="fitches__item">
+                  <div class="fitches__card">
+                    <div class="fitches__icon">
+                      <img src="img/fitches1.svg" alt="">
+                    </div><!-- /.fitches__icon -->
+                    <div class="fitches__text">Быстрая реакция персонального менеджера</div><!-- /.fitches__text -->
+                  </div><!-- /.fitches__card -->
+                </div><!-- /.fitches__item -->
+                <div class="fitches__item">
+                  <div class="fitches__card">
+                    <div class="fitches__icon">
+                      <img src="img/fitches2.svg" alt="">
+                    </div><!-- /.fitches__icon -->
+                    <div class="fitches__text">Круглосуточный автоматизированный мониторинг работоспособности сайта
+                    </div><!-- /.fitches__text -->
+                  </div><!-- /.fitches__card -->
+                </div><!-- /.fitches__item -->
+                <div class="fitches__item">
+                  <div class="fitches__card">
+                    <div class="fitches__icon">
+                      <img src="img/fitches3.svg" alt="">
+                    </div><!-- /.fitches__icon -->
+                    <div class="fitches__text">Резервное копирование проекта каждые 24 часа</div>
+                    <!-- /.fitches__text -->
+                  </div><!-- /.fitches__card -->
+                </div><!-- /.fitches__item -->
+                <div class="fitches__item">
+                  <div class="fitches__card">
+                    <div class="fitches__icon">
+                      <img src="img/fitches4.svg" alt="">
+                    </div><!-- /.fitches__icon -->
+                    <div class="fitches__text">Быстрые сроки выполнения задач</div><!-- /.fitches__text -->
+                  </div><!-- /.fitches__card -->
+                </div><!-- /.fitches__item -->
+              </div><!-- /.fitches__items -->
+            </div><!-- /.fitches__wrapper -->
+          </div><!-- /.container container_line -->
+        </div><!-- /.fitches -->
+
+        <div class="clients">
+          <div class="container container_line">
+            <h2>Наши клиенты</h2>
+            <div class="clients__wrapper">
+              <div class="clients__items">
+                <div class="clients__item">
+                  <div class="clients__card">
+                    <div class="clients__image"><img src="img/rk8fq1ymp2xpklf6n5lysioz05c22j54.svg" alt=""></div>
+                    <!-- /.clients__image -->
+                  </div><!-- /.clients__card -->
+                </div><!-- /.clients__item -->
+                <div class="clients__item">
+                  <div class="clients__card">
+                    <div class="clients__image"><img
+                        src="https://empis.ru/upload/iblock/6aa/nx688v0jz24vuow8kefp3gis67khd0ry.svg" alt=""></div>
+                    <!-- /.clients__image -->
+                  </div><!-- /.clients__card -->
+                </div><!-- /.clients__item -->
+                <div class="clients__item">
+                  <div class="clients__card">
+                    <div class="clients__image"><img
+                        src="https://empis.ru/upload/iblock/316/rvhx1lldibwg1wl5c4qodasaoa4t5g9f.svg" alt=""></div>
+                    <!-- /.clients__image -->
+                  </div><!-- /.clients__card -->
+                </div><!-- /.clients__item -->
+                <div class="clients__item">
+                  <div class="clients__card">
+                    <div class="clients__image"><img
+                        src="https://empis.ru/upload/resize_cache/webp/iblock/eb9/87huvuk0j08xkpmcx2fq247z3ut3bkmp.webp"
+                        alt=""></div><!-- /.clients__image -->
+                  </div><!-- /.clients__card -->
+                </div><!-- /.clients__item -->
+                <div class="clients__item">
+                  <div class="clients__card">
+                    <div class="clients__image"><img
+                        src="https://empis.ru/upload/iblock/846/7t2ze7no24la95rv80zxpwm0vuctftsr.svg" alt=""></div>
+                    <!-- /.clients__image -->
+                  </div><!-- /.clients__card -->
+                </div><!-- /.clients__item -->
+                <div class="clients__item">
+                  <div class="clients__card">
+                    <div class="clients__image"><img
+                        src="https://empis.ru/upload/resize_cache/webp/iblock/648/ajxu51kdrfhw14tj0erxt2w13t2lsle3.webp"
+                        alt=""></div><!-- /.clients__image -->
+                  </div><!-- /.clients__card -->
+                </div><!-- /.clients__item -->
+                <div class="clients__item">
+                  <div class="clients__card">
+                    <div class="clients__image"><img
+                        src="https://empis.ru/upload/resize_cache/webp/iblock/1b2/ecbvqv8el8x4z1fczomi6ezqywflesld.webp"
+                        alt=""></div><!-- /.clients__image -->
+                  </div><!-- /.clients__card -->
+                </div><!-- /.clients__item -->
+                <div class="clients__item">
+                  <div class="clients__card">
+                    <div class="clients__image"><img
+                        src="https://empis.ru/upload/iblock/85f/dvvowzoeubaahwvj2cfly3uyjn0avg3j.svg" alt=""></div>
+                    <!-- /.clients__image -->
+                  </div><!-- /.clients__card -->
+                </div><!-- /.clients__item -->
+                <div class="clients__item">
+                  <div class="clients__card">
+                    <div class="clients__image"><img
+                        src="https://empis.ru/upload/iblock/178/v1h7q17j9w2lw5u6xg1pytnf31tmbhkz.svg" alt=""></div>
+                    <!-- /.clients__image -->
+                  </div><!-- /.clients__card -->
+                </div><!-- /.clients__item -->
+                <div class="clients__item">
+                  <div class="clients__card">
+                    <div class="clients__image"><img
+                        src="https://empis.ru/upload/iblock/17d/bfq9ghw7fs8st0pvdhlaommmzsh53qnj.svg" alt=""></div>
+                    <!-- /.clients__image -->
+                  </div><!-- /.clients__card -->
+                </div><!-- /.clients__item -->
+                <div class="clients__item">
+                  <div class="clients__card">
+                    <div class="clients__image"><img
+                        src="https://empis.ru/upload/iblock/c1f/aca6kac47idrvuk6lwdwkm2219mc6046.svg" alt=""></div>
+                    <!-- /.clients__image -->
+                  </div><!-- /.clients__card -->
+                </div><!-- /.clients__item -->
+                <div class="clients__item">
+                  <div class="clients__card">
+                    <div class="clients__image"><img
+                        src="https://empis.ru/upload/iblock/28b/k3bxqtl7y9dehg1in9hzrho2j973u701.svg" alt=""></div>
+                    <!-- /.clients__image -->
+                  </div><!-- /.clients__card -->
+                </div><!-- /.clients__item -->
+              </div><!-- /.clients__items -->
+            </div><!-- /.clients__wrapper -->
+
+          </div><!-- /.container container_line -->
+        </div><!-- /.clients -->
+
+
+        <div class="reviews">
+
+          <div class="container container_line">
+            <div class="ellipse" id='ellipse_reviews_1'>
+              <img src="img/ellipse_projects_1.svg" alt="">
+            </div><!-- /.ellipse -->
+            <div class="reviews__wrapper">
+              <div class="projects__header">
+                <h2>Отзывы наших клиентов</h2>
+  
+                <div class="projects__nav">
+                  <span class="pagingInfo_reviews"></span>
+                  <div class="projects__arrows sliderarrows">
+                    <div class="reviews__left sliderleft">
+                      <img src="img/projects_right.svg" alt="">
+                    </div><!-- /.projects__left -->
+                    <div class="reviews__right sliderright">
+                      <img src="img/projects_right.svg" alt="">
+  
+                    </div><!-- /.projects__right -->
+                  </div><!-- /.projects__arrows -->
+                </div><!-- /.projects__nav -->
+  
+  
+              </div><!-- /.projects__header -->
+  
+              <div class="reviews__sliderwrapper bs_slider">
+                <div class="reviews__slider">
+                  <div class="reviews__slide">
+                    <div class="reviewslide">
+                      <div class="reviewslide__wrapper">
+                        <div class="reviewslide__image">
+                          <a href="//empis.ru/upload/resize_cache/webp/iblock/6c8/4pcv978hd7bk41h29ja5e2k9qqdbuyg4.webp"
+                            data-lightbox="review">
+                            <img
+                              src="//empis.ru/upload/resize_cache/webp/iblock/6c8/4pcv978hd7bk41h29ja5e2k9qqdbuyg4.webp"
+                              alt="Ideal Salon">
+                          </a>
+                        </div><!-- /.reviewslide__image -->
+                        <div class="reviewslide__content">
+                          <div class="reviewslide__title">Наталья Борисовна</div><!-- /.reviewslide__title -->
+                          <div class="reviewslide__text">Полный комплекс услуг по техническому сопровождению и
+                            обслуживанию сайтов от профессионалов с многолетним опытом и экспертизой.</div>
+                          <!-- /.reviewslide__text -->
+                          <div class="reviewslide__link">
+                            <a href="//empis.ru/upload/resize_cache/webp/iblock/6c8/4pcv978hd7bk41h29ja5e2k9qqdbuyg4.webp"
+                              data-lightbox="review">
+                              Посмотреть оригинал
+                            </a>
+                          </div><!-- /.reviewslide__link -->
+                        </div><!-- /.reviewslide__content -->
+                      </div><!-- /.reviewslide__wrapper -->
+                    </div><!-- /.reviewslide -->
+                  </div><!-- /.reviews__slide -->
+                  <div class="reviews__slide">
+                    <div class="reviewslide">
+                      <div class="reviewslide__wrapper">
+                        <div class="reviewslide__image">
+                          <a href="//empis.ru/upload/resize_cache/webp/iblock/6c8/4pcv978hd7bk41h29ja5e2k9qqdbuyg4.webp"
+                            data-lightbox="review">
+                            <img
+                              src="//empis.ru/upload/resize_cache/webp/iblock/6c8/4pcv978hd7bk41h29ja5e2k9qqdbuyg4.webp"
+                              alt="Ideal Salon">
+                          </a>
+                        </div><!-- /.reviewslide__image -->
+                        <div class="reviewslide__content">
+                          <div class="reviewslide__title">Наталья Борисовна</div><!-- /.reviewslide__title -->
+                          <div class="reviewslide__text">Полный комплекс услуг по техническому сопровождению и
+                            обслуживанию сайтов от профессионалов с многолетним опытом и экспертизой.</div>
+                          <!-- /.reviewslide__text -->
+                          <div class="reviewslide__link">
+                            <a href="//empis.ru/upload/resize_cache/webp/iblock/6c8/4pcv978hd7bk41h29ja5e2k9qqdbuyg4.webp"
+                              data-lightbox="review">
+                              Посмотреть оригинал
+                            </a>
+                          </div><!-- /.reviewslide__link -->
+                        </div><!-- /.reviewslide__content -->
+                      </div><!-- /.reviewslide__wrapper -->
+                    </div><!-- /.reviewslide -->
+                  </div><!-- /.reviews__slide -->
+                  <div class="reviews__slide">
+                    <div class="reviewslide">
+                      <div class="reviewslide__wrapper">
+                        <div class="reviewslide__image">
+                          <a href="//empis.ru/upload/resize_cache/webp/iblock/6c8/4pcv978hd7bk41h29ja5e2k9qqdbuyg4.webp"
+                            data-lightbox="review">
+                            <img
+                              src="//empis.ru/upload/resize_cache/webp/iblock/6c8/4pcv978hd7bk41h29ja5e2k9qqdbuyg4.webp"
+                              alt="Ideal Salon">
+                          </a>
+                        </div><!-- /.reviewslide__image -->
+                        <div class="reviewslide__content">
+                          <div class="reviewslide__title">Наталья Борисовна</div><!-- /.reviewslide__title -->
+                          <div class="reviewslide__text">Полный комплекс услуг по техническому сопровождению и
+                            обслуживанию сайтов от профессионалов с многолетним опытом и экспертизой.</div>
+                          <!-- /.reviewslide__text -->
+                          <div class="reviewslide__link">
+                            <a href="//empis.ru/upload/resize_cache/webp/iblock/6c8/4pcv978hd7bk41h29ja5e2k9qqdbuyg4.webp"
+                              data-lightbox="review">
+                              Посмотреть оригинал
+                            </a>
+                          </div><!-- /.reviewslide__link -->
+                        </div><!-- /.reviewslide__content -->
+                      </div><!-- /.reviewslide__wrapper -->
+                    </div><!-- /.reviewslide -->
+                  </div><!-- /.reviews__slide -->
+                  <div class="reviews__slide">
+                    <div class="reviewslide">
+                      <div class="reviewslide__wrapper">
+                        <div class="reviewslide__image">
+                          <a href="//empis.ru/upload/resize_cache/webp/iblock/6c8/4pcv978hd7bk41h29ja5e2k9qqdbuyg4.webp"
+                            data-lightbox="review">
+                            <img
+                              src="//empis.ru/upload/resize_cache/webp/iblock/6c8/4pcv978hd7bk41h29ja5e2k9qqdbuyg4.webp"
+                              alt="Ideal Salon">
+                          </a>
+                        </div><!-- /.reviewslide__image -->
+                        <div class="reviewslide__content">
+                          <div class="reviewslide__title">Наталья Борисовна</div><!-- /.reviewslide__title -->
+                          <div class="reviewslide__text">Полный комплекс услуг по техническому сопровождению и
+                            обслуживанию сайтов от профессионалов с многолетним опытом и экспертизой.</div>
+                          <!-- /.reviewslide__text -->
+                          <div class="reviewslide__link">
+                            <a href="//empis.ru/upload/resize_cache/webp/iblock/6c8/4pcv978hd7bk41h29ja5e2k9qqdbuyg4.webp"
+                              data-lightbox="review">
+                              Посмотреть оригинал
+                            </a>
+                          </div><!-- /.reviewslide__link -->
+                        </div><!-- /.reviewslide__content -->
+                      </div><!-- /.reviewslide__wrapper -->
+                    </div><!-- /.reviewslide -->
+                  </div><!-- /.reviews__slide -->
+                </div><!-- /.reviews__slider -->
+              </div><!-- /.reviews__sliderwrapper -->
+            </div><!-- /.reviews__wrapper -->
+          </div><!-- /.container container_line -->
+        </div><!-- /.reviews -->
 
       </main>
 
