@@ -887,7 +887,7 @@ a.bordered {
 .headerlogo {
   position: relative;
 
-  img {
+  img.headerlogo_image {
     width: 169px;
   }
 }
@@ -924,23 +924,27 @@ a.bordered {
     white-space: nowrap;
   }
 }
-.headerlogo:hover {
-  box-shadow: 4px 4px 30px 0 rgba(10, 37, 64, 0.03);
-  .headerlogo_image {
-    display: none;
-  }
-  .headerlogo_imagehover {
-    display: block;
-  }
-  .headerlogo__logo {
-    background: #fff;
-  }
-  .headerlogo__link {
-    left: calc(100% - 40px);
-    z-index: 2;
-    width: initial;
+
+@media (min-width: 1281px) {
+  .headerlogo:hover {
+    box-shadow: 4px 4px 30px 0 rgba(10, 37, 64, 0.03);
+    .headerlogo_image {
+      display: none;
+    }
+    .headerlogo_imagehover {
+      display: block;
+    }
+    .headerlogo__logo {
+      background: #fff;
+    }
+    .headerlogo__link {
+      left: calc(100% - 40px);
+      z-index: 2;
+      width: initial;
+    }
   }
 }
+
 
 h1 {
   font-family: var(--font-family);
@@ -1097,7 +1101,7 @@ h1 {
   input {
     display: block;
     width: 100%;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 7px;
     height: 51px;
     background: #f3f4f5;
@@ -1107,7 +1111,28 @@ h1 {
     font-size: 16px;
     line-height: 100%;
     color: #0a2540;
+
+    &:focus {
+      border-color: #0EB1F2;
+      color: #0a2540 !important;
+    }
   }
+}
+
+.error {
+  input {
+    border-color: #ff2f54;
+    color: #ff2f54;
+  }
+}
+
+.errortext {
+  font-family: (var(--second-family));
+  padding-top: 10px;
+font-weight: 500;
+font-size: 16px;
+line-height: 100%;
+color: #ff2f54;
 }
 .phoneform__button {
   margin-top: 43px;
@@ -1320,7 +1345,7 @@ h2 {
     -webkit-text-fill-color: transparent;
   }
 }
-.mapstats {
+.mapstats__wrapper {
   padding-top: 109px;
 }
 .container_line {
@@ -2007,6 +2032,8 @@ margin-top: -25px;
 .prices {
   background-image: url(../img/peices.png);
   background-size: cover;
+/*   background-repeat: no-repeat;
+  background-position: center; */
 
   .container_line {
   }
@@ -2018,7 +2045,7 @@ margin-top: -25px;
 .offerblock__cards {
   display: flex;
   align-items: center;
-  min-height: 1040px;
+  min-height: 1200px;
 }
 
 .card_info {
@@ -2159,6 +2186,11 @@ dt {
     border-bottom: 2px dotted #0eb1f2;
     padding-bottom: 2px;
     display: inline-block;
+
+    &:hover {
+      color: #7018FF;
+      border-color: #7018FF;
+    }
   }
 
 text-align: center;
@@ -2382,8 +2414,21 @@ color: #0eb1f2;
     align-items: center;
     li {
       margin-right: 8px;
+      
       a {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 48px;
+      background: #1B2D40;
+
+      img {
+        display: inline-block;
+      }
       }
     }
   }
@@ -2402,6 +2447,10 @@ font-weight: 800;
 font-size: 52px;
 line-height: 100%;
 color: #fff;
+
+&:hover {
+  color: #0EB1F2;
+}
   }
 }
 .footermain__teltext {
@@ -2431,6 +2480,10 @@ color: #fff;
 display: block;
 padding-bottom: 7px;
 border-bottom: 3px dotted #0eb1f2;
+
+&:hover {
+  color: #0EB1F2;
+}
   }
 }
 
@@ -2497,7 +2550,7 @@ padding-bottom: 2px;
 border-bottom: 2px dotted #0eb1f2;
 
 &:hover {
-  border-bottom: none;
+  opacity: 0.5;
 }
   }
 }
@@ -2515,6 +2568,51 @@ text-decoration: underline;
 
 &:hover {
   text-decoration: none;
+  opacity: 1;
 }
   }
 }
+
+.socials ul li a {
+  border: 2px solid transparent;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+
+
+  &:hover {
+    border-color: #0EB1F2;
+  }
+}
+
+.card_central {
+  position: relative;
+  z-index: 3;
+}
+
+#headermobile {
+  display: none;
+}
+
+#demo {
+
+  
+    }
+
+    .mapstats {
+      -webkit-transform: skewY(-3deg);
+      -moz-transform: skewY(-3deg);
+      -ms-transform: skewY(-3deg);
+      -o-transform: skewY(-3deg);
+      transform: skewY(-3deg);
+      
+      margin-top: -90px;
+
+      .container {
+        -webkit-transform: skewY(3deg);
+        -moz-transform: skewY(3deg);
+        -ms-transform: skewY(3deg);
+        -o-transform: skewY(3deg);
+        transform: skewY(3deg);
+      }
+    }

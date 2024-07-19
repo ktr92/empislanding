@@ -67,6 +67,10 @@ function lazyLoadSrc(selector) {
 $(document).ready(function () {
   new WOW().init();
 
+  $('.headerlogo').on('click', function(e) {
+    $(this).toggleClass('active')
+  })
+
   function initSlider(selector, count, fade, nav, left, right) {
     var $status = $(nav);
     var $slickElement = $(selector);
@@ -163,6 +167,7 @@ $(document).ready(function () {
     $(`[data-menu=${menu}]`).toggleClass("active");
     $(this).toggleClass("active");
     $(".jsbackdrop").toggleClass("active");
+    $("body").toggleClass("expmenu");
   });
   $(".jsbackdrop").on("click", function (e) {
     $(this).removeClass("active");

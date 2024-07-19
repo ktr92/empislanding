@@ -1,8 +1,59 @@
 <% var data={ title: "MAIN" , author: "" }; %>
   <%= _.template(require('../includes/head.html').default)(data) %>
+
+  <div id="content">
+
     <%= _.template(require('../includes/header.html').default)(data) %>
       <canvas id="demo"></canvas>
       <main>
+        <div class="mainmenu" data-menu="mainmenu">
+          <div class="mainmenu__wrapper">
+            <div class="mainmenu__items">
+              <div class="headermenu">
+                <ul>
+                  <li><a href="" class="scrollTo">Кейсы</a><!-- /.scrollTo --></li>
+                  <li><a href="" class="scrollTo">Тарифы</a><!-- /.scrollTo --></li>
+                  <li><a href="" class="scrollTo">Клиенты</a><!-- /.scrollTo --></li>
+                  <li><a href="" class="scrollTo">Отзывы</a><!-- /.scrollTo --></li>
+                  <li><a href="" class="scrollTo">Контакты</a><!-- /.scrollTo --></li>
+                </ul>
+              </div><!-- /.headermenu -->
+              <div class="headercontact">
+                <div class="footermain__items">
+                  <div class="footermain__phone">
+                    <div class="footermain__tel"><a href="tel:+74951183013">+7 495 118 30 13</a></div><!-- /.footermain__tel -->
+                    <div class="footermain__teltext">
+                      <img src="img/intouch.svg" alt="">
+                      <span>Мы на связи</span>
+                    </div><!-- /.footermain__teltext -->
+                  </div><!-- /.footermain__phone -->
+                  <div class="footermain__solciasl">
+                    <div class="footercontacts__mess">
+                      <div class="footercontacts__text">Связаться через:</div>
+                      <div class="socials">
+                        <ul>
+                          <li>
+                            <a href="//t.me/EmpisBot" target="_blank"><img src="img/telegram.svg" alt=""></a>
+                          </li>
+                          <li>
+                            <a href="//api.whatsapp.com/send?phone=79165133202" target="_blank"><img src="img/whatsapp2.svg" alt=""></a>
+                          </li>
+          
+                          <li>
+                            <a href="viber://add?number=79165133202" target="_blank"><img src="img/viber.svg" alt=""></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div><!-- /.footermain__solciasl -->
+                  <div class="footermain__email">
+                    <a href="mailto:info@empis.ru">info@empis.ru</a>
+                  </div><!-- /.footermain__email -->
+                </div>
+              </div><!-- /.headercontact -->
+            </div>
+          </div>
+        </div>
         <div class="indexmain">
           <div class="container">
             <div class="indexmain__wrapper">
@@ -36,7 +87,9 @@
                       <!-- /.phoneform__title -->
                       <div class="phoneform__item">
                         <div class="phoneform__label">Имя</div><!-- /.phoneform__label -->
-                        <div class="phoneform__input"><input type="text"></div><!-- /.phoneform__input -->
+                        <div class="phoneform__input error"><input type="text">
+                          <span class="errortext">Введен неверный формат телефона</span><!-- /.errortext -->
+                        </div><!-- /.phoneform__input -->
                       </div><!-- /.phoneform__item -->
                       <div class="phoneform__item">
                         <div class="phoneform__label">Телефон</div><!-- /.phoneform__label -->
@@ -117,12 +170,12 @@
           </div><!-- /.indexmain__form -->
         </div><!-- /.indexmain -->
 
-        <div class="diagonal">
+      <!--   <div class="diagonal">
           <svg id="top-section-border" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
             preserveAspectRatio="none">
             <polygon fill="#fff" points="0,100 100,0 100,100"></polygon>
           </svg>
-        </div><!-- /.diagonal -->
+        </div> -->
 
         <div class="mapstats">
           <div class="container container_line">
@@ -708,7 +761,7 @@
             <div class="reviews__wrapper">
               <div class="projects__header">
                 <h2>Отзывы наших клиентов</h2>
-  
+
                 <div class="projects__nav">
                   <span class="pagingInfo_reviews"></span>
                   <div class="projects__arrows sliderarrows">
@@ -717,14 +770,14 @@
                     </div><!-- /.projects__left -->
                     <div class="reviews__right sliderright">
                       <img src="img/projects_right.svg" alt="">
-  
+
                     </div><!-- /.projects__right -->
                   </div><!-- /.projects__arrows -->
                 </div><!-- /.projects__nav -->
-  
-  
+
+
               </div><!-- /.projects__header -->
-  
+
               <div class="reviews__sliderwrapper bs_slider">
                 <div class="reviews__slider">
                   <div class="reviews__slide">
@@ -841,5 +894,5 @@
 
 
 
-
       <%= _.template(require('../includes/footer.html').default)(data) %>
+    </div><!-- /#content -->
