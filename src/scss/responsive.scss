@@ -6,7 +6,9 @@
     width: 100%;
   }
   .container {
-   padding: 0 18px;
+   padding: 0 18px 0 0;
+   margin-left: 18px;
+   width: calc(100% - 18px);
   }
   .header__buttons {
     margin-left: 20px;
@@ -389,7 +391,7 @@ color: #fff;
     -o-transform: skewY(-9deg);
     transform: skewY(-9deg);
     
-    margin-top: -30px;
+    margin-top: 0px;
 
     .container {
       -webkit-transform: skewY(9deg);
@@ -461,6 +463,127 @@ font-size: 18px;
 line-height: 100%;
 text-transform: uppercase;
     margin-bottom: 18px;
+  }
+  h2 {
+    font-family: var(--font-family);
+font-weight: 700;
+font-size: 22px;
+line-height: 100%;
+margin-bottom: 0;
+padding-left: 20px;
+min-height: 35px;
+display: flex;
+align-items: center;
+/* line-height: 35px; */
+  }
+  .pagingInfo_active {
+    font-size: 26px;
+  }
+  .pagingInfo_default {
+    font-size: 12px;
+  }
+  .mapstats__wrapper {
+    padding-top: 60px;
+  }
+  .mapstats__title  {
+    padding-right: 30px;
+  }
+  .mapstats__title br {
+    display: none;
+  }
+  .stats__items {
+    flex-wrap: wrap;
+    margin: 0 -12px;
+  }
+  .stats__item {
+    width: 50%;
+    max-width: 50%;
+    min-width: 50%;
+    padding: 0 12px;
+  }
+  .wrapper_line {
+    padding-left: 20px;
+  }
+  .stats__number {
+    margin-bottom: 6px;
+    font-size: 32px;
+    line-height: 1;
+
+  }
+  .stats__items {
+    height: unset;
+  
+    .stats__item:nth-child(even) {
+      margin-top: 70px;
+    }
+  }
+  .stats__text {
+    font-weight: 500;
+font-size: 14px;
+line-height: 130%;
+  }
+  .stats {
+    margin: 22px 0;
+  }
+  .mapstats {
+    height: unset;
+  }
+  .mapstats {
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
+  #ellipse_mapstats_2 {
+    right: 0;
+    top: 90px;
+    width: 70px;
+  }
+  #ellipse_mapstats_1 {
+    left: 0;
+    right: unset;
+    top: unset;
+   bottom: 40px;
+    width: 40px;
+  }
+  .mapstats {
+    position: relative;
+  
+  }
+  .mapstats__wrapper {
+    padding-bottom: 44px;
+  }
+  .projects {
+    background: #fff;
+    margin-top: -10px;
+    position: relative;
+    z-index: 4;
+  }
+  .sliderarrows {
+    display: none;
+  }
+  .projectcard {
+    min-height: unset;
+  }
+  .projectcard__image {
+    width: 100%;
+  }
+  .projectcard__content {
+    width: 100%;
+    padding-left: 0;
+    position: static;
+  }
+  .projectcard__bg {
+    display: none;
+  }
+  .offerblock__cards {
+    min-height: unset;
+    background-position: top center;
+  }
+  .prices {
+    padding-top: 90px;
+    background-size: 900px;
+    background-position: top right;
+    background-repeat: no-repeat;
   }
 }
 @media (max-width: 1150px) {
