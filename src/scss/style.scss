@@ -1286,7 +1286,9 @@ h2 {
 .wrapper_line {
   padding-left: 53px;
 }
-
+#ellipse_projects_2 {
+  display: none;
+}
 .stats__items {
   height: 210px;
 
@@ -2328,14 +2330,15 @@ border: 3px solid #fff;
   
 }
 .reviewslide__image {
-  box-shadow: 4px 4px 30px 0 rgba(10, 37, 64, 0.15);
-  max-width: 130px;
-  min-width: 130px;
-  height: 183px;
+  
 
   a {
     display: block;
     cursor: pointer;
+    box-shadow: 4px 4px 30px 0 rgba(10, 37, 64, 0.15);
+  max-width: 130px;
+  min-width: 130px;
+  height: 183px;
   }
 }
 .reviewslide__content {
@@ -2361,6 +2364,8 @@ padding-bottom: 22px;
 }
 }
 .reviewslide__text {
+  font-family: var(--font-family);
+
   margin-bottom: 22px;
 font-weight: 400;
 font-size: 16px;

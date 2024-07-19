@@ -71,7 +71,7 @@ $(document).ready(function () {
     $(this).toggleClass('active')
   })
 
-  function initSlider(selector, count, fade, nav, left, right) {
+  function initSlider(selector, count, fade, nav, left, right, resp) {
     var $status = $(nav);
     var $slickElement = $(selector);
   
@@ -95,12 +95,23 @@ $(document).ready(function () {
       fade: fade,
       dots: true,
        prevArrow: left,
-      nextArrow: right
+      nextArrow: right,
+      responsive: resp
     });
   };
 
   initSlider('.projects__slider', 1, true, '.pagingInfo', '.projects__left', '.projects__right')
-  initSlider('.reviews__slider', 2, false, '.pagingInfo_reviews', '.reviews__left', '.reviews__right')
+  initSlider('.reviews__slider', 2, false, '.pagingInfo_reviews', '.reviews__left', '.reviews__right', [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true
+      }
+    }
+  ])
 
 
  
@@ -173,6 +184,7 @@ $(document).ready(function () {
     $(this).removeClass("active");
     $("[data-menu]").removeClass("active");
     $("[data-menutoggle]").removeClass("active");
+    $("body").toggleClass("expmenu");
   });
 
 
