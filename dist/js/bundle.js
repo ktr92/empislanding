@@ -67,6 +67,66 @@ function lazyLoadSrc(selector) {
 $(document).ready(function () {
   new WOW().init();
 
+  
+document.querySelectorAll('.dropdown').forEach(function (item) {
+  item.addEventListener('click', event => {
+
+    if (event.target.classList.contains('dropdown__label')) {
+      if (item.querySelector('.dropdown__menu').classList.contains('active')) {
+        item.querySelector('.dropdown__menu').classList.remove('active')
+        item.querySelector('.dropdown__label').classList.remove('active')
+      } else {
+        item.querySelector('.dropdown__menu').classList.add('active')
+        event.target.classList.add('active')
+      }
+
+    } else if (event.target.tagName.toLowerCase() == 'li') {
+      if (item.querySelector('li.selected')) {
+        item.querySelector('li.selected').classList.remove('selected')
+      }
+
+      event.target.classList.add('selected')
+      item.querySelector('.dropdown__label').classList.remove('active')
+      item.querySelector('.dropdown__label').textContent = event.target.textContent
+      item.querySelector('.dropdown_value').value = event.target.textContent
+      item.querySelector('.dropdown__menu').classList.remove('active')
+    }
+  })
+})
+
+
+
+window.onclick = function (event) {
+  var dropdown = document.querySelectorAll('.dropdown__label.active')
+  dropdown.forEach(function (drop) {
+    if (event.target != drop) {
+      document.querySelectorAll('.dropdown__menu.active').forEach(function (item) {
+        item.classList.remove('active')
+      })
+      document.querySelectorAll('.dropdown__label.active').forEach(function (item) {
+        item.classList.remove('active')
+      })
+    }
+
+
+
+
+
+  })
+}
+
+$(".fileupload input[type=file]").change(function()	{		
+  if (this.files[0]) {
+    var filename = $(this).val().replace(/.*\\/, ""); 
+    /* $(this).siblings('span').empty(); */
+    $(this).closest('.fileupload').find('.filename').remove()
+    $(this).closest('.fileupload').append('<span class="filename"> ' + filename + ' ' + ' </span>');
+    $('.file-error').html("");
+    $('.file-upload span').css('text-transform', 'none');
+    $('.changefile').css('display', 'block');
+  }
+  });
+
   $('.headerlogo').on('click', function(e) {
     $(this).toggleClass('active')
   })

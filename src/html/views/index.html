@@ -11,11 +11,11 @@
               <div class="mainmenu__items">
                 <div class="headermenu">
                   <ul>
-                    <li><a href="" class="scrollTo">Кейсы</a><!-- /.scrollTo --></li>
-                    <li><a href="" class="scrollTo">Тарифы</a><!-- /.scrollTo --></li>
-                    <li><a href="" class="scrollTo">Клиенты</a><!-- /.scrollTo --></li>
-                    <li><a href="" class="scrollTo">Отзывы</a><!-- /.scrollTo --></li>
-                    <li><a href="" class="scrollTo">Контакты</a><!-- /.scrollTo --></li>
+                    <li><a href="#block1" class="scrollTo">Кейсы</a><!-- /.scrollTo --></li>
+                    <li><a href="#block2" class="scrollTo">Тарифы</a><!-- /.scrollTo --></li>
+                    <li><a href="#block3" class="scrollTo">Клиенты</a><!-- /.scrollTo --></li>
+                    <li><a href="#block4" class="scrollTo">Отзывы</a><!-- /.scrollTo --></li>
+                    <li><a href="#footer" class="scrollTo">Контакты</a><!-- /.scrollTo --></li>
                   </ul>
                 </div><!-- /.headermenu -->
                 <div class="headercontact">
@@ -99,7 +99,7 @@
                           <div class="phoneform__input"><input type="tel"></div><!-- /.phoneform__input -->
                         </div><!-- /.phoneform__item -->
                         <div class="phoneform__button">
-                          <a href="" class="btn btn_main btn_icon">
+                          <a href="#modal__order" data-toggle="modal"  class="btn btn_main btn_icon">
                             <span class='btntext'>Оставить заявку</span>
                             <span class="btnicon">
                               <img src="img/empisicon.svg" alt="" class='default'>
@@ -269,7 +269,7 @@
             </div><!-- /.container -->
           </div><!-- /.mapstats -->
 
-          <div class="projects">
+          <div class="projects" id='block1'>
             <div class="container container_line">
               <div class="projects__header">
                 <h2>Наши кейсы</h2>
@@ -406,7 +406,7 @@
             </div><!-- /.container container_line -->
           </div><!-- /.projects -->
 
-          <div class="prices">
+          <div class="prices"  id='block2'>
             <div class="container container_line">
               <div class="prices__wrapper">
                 <div class="offerblock__cards offerblock__cards_support">
@@ -483,7 +483,7 @@
                               </span>
                             </div>
                             <div class="card__button">
-                              <a href="" class="btn btn_main btn_icon ">
+                              <a href="#modal__order" data-toggle="modal"  class="btn btn_main btn_icon ">
                                 <span class="btntext">Оставить заявку</span>
                                 <span class="btnicon">
                                   <img src="img/empisicon.svg" alt="" class="default">
@@ -538,7 +538,7 @@
                               </span>
                             </div>
                             <div class="card__button">
-                              <a href="" class="btn btn_main btn_icon btn_lg">
+                              <a href="#modal__order" data-toggle="modal"  class="btn btn_main btn_icon btn_lg">
                                 <span class="btntext">Оставить заявку</span>
                                 <span class="btnicon">
                                   <img src="img/empisicon.svg" alt="" class="default">
@@ -548,7 +548,7 @@
                               </a>
                             </div>
                             <div class="card__link">
-                              <a href="#modal__info85" data-toggle="modal" class="link_gray">В тариф также включено</a>
+                              <a href="#modal__info28" data-toggle="modal" class="link_gray">В тариф также включено</a>
                             </div>
 
                           </div>
@@ -594,7 +594,7 @@
                               </span>
                             </div>
                             <div class="card__button">
-                              <a href="" class="btn btn_main btn_icon ">
+                              <a href="#modal__order" data-toggle="modal"  class="btn btn_main btn_icon ">
                                 <span class="btntext">Оставить заявку</span>
                                 <span class="btnicon">
                                   <img src="img/empisicon.svg" alt="" class="default">
@@ -604,7 +604,7 @@
                               </a>
                             </div>
                             <div class="card__link">
-                              <a href="#modal__info86" data-toggle="modal" class="link_gray">В тариф также включено</a>
+                              <a href="#modal__info28" data-toggle="modal" class="link_gray">В тариф также включено</a>
                             </div>
                           </div>
                         </div>
@@ -625,7 +625,7 @@
             </div><!-- /.container container_line -->
           </div><!-- /.prices -->
 
-          <div class="fitches">
+          <div class="fitches" >
             <div class="ellipse" id='ellipse_fitches_1'>
               <img src="img/ellipse_projects_1.svg" alt="">
             </div><!-- /.ellipse -->
@@ -674,7 +674,7 @@
             </div><!-- /.container container_line -->
           </div><!-- /.fitches -->
 
-          <div class="clients">
+          <div class="clients"  id='block3'>
             <div class="container container_line">
               <h2>Наши клиенты</h2>
               <div class="clients__wrapper">
@@ -769,7 +769,7 @@
           </div><!-- /.clients -->
 
 
-          <div class="reviews">
+          <div class="reviews"  id='block4'>
 
             <div class="container container_line">
               <div class="ellipse" id='ellipse_reviews_1'>
@@ -925,7 +925,7 @@
 
         </main>
 
-
+        
 
         <%= _.template(require('../includes/footer.html').default)(data) %>
     </div><!-- /#content -->

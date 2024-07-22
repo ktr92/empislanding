@@ -1121,14 +1121,14 @@ h1 {
 
 .error {
   input {
-    border-color: #ff2f54;
+    border-color: #ff2f54 !important;
     color: #ff2f54;
   }
 }
 
 .errortext {
   font-family: (var(--second-family));
-  padding-top: 10px;
+  padding-top: 4px;
 font-weight: 500;
 font-size: 16px;
 line-height: 100%;
@@ -1963,7 +1963,7 @@ margin-top: -25px;
 }
 
 .card__list {
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   ul {
     @include clear;
   }
@@ -1979,6 +1979,10 @@ margin-top: -25px;
   line-height: 130%;
   color: #0a2540;
   position: relative;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .card__list li:after {
@@ -2621,3 +2625,4 @@ text-decoration: underline;
         transform: skewY(3deg);
       }
     }
+

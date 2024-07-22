@@ -1,14 +1,28 @@
 @import "./style.scss";
 
 @media (max-width: 1440px) {
+  .mapstats__wrapper {
+    overflow: hidden;
+  }
   #content {
     overflow: hidden;
     width: 100%;
   }
+ 
+  
+.modal_xlarge {
+  .modal-dialog {
+    width: 900px;
+
+  }
+}
+  
   .container {
    padding: 0 18px 0 0;
    margin-left: 18px;
    width: calc(100% - 18px);
+   overflow: hidden;
+
   }
   .header__buttons {
     margin-left: 20px;
@@ -50,8 +64,14 @@
   .footerinfo__items {
     margin: 0;
   }
+ 
+
 }
 @media (max-width: 1280px) {
+  .projects__wrapper {
+    max-width: 767px;
+  margin: auto !important; 
+}
  
   .headermenu ul li {
     margin-bottom: 32px;
@@ -482,9 +502,10 @@ align-items: center;
   .pagingInfo_default {
     font-size: 12px;
   }
-  .mapstats__wrapper {
+/*   .mapstats__wrapper {
     padding-top: 60px;
-  }
+  } */
+
   .mapstats__title  {
     padding-right: 30px;
   }
@@ -528,11 +549,7 @@ line-height: 130%;
   .mapstats {
     height: unset;
   }
-  .mapstats {
-    background-size: 150%;
-    background-repeat: no-repeat;
-    background-position: left center;
-  }
+
   #ellipse_mapstats_2 {
     right: 0;
     top: 90px;
@@ -550,7 +567,8 @@ line-height: 130%;
   
   }
   .mapstats__wrapper {
-    padding-bottom: 44px;
+    padding-top:150px;
+    padding-bottom: 200px;
   }
   .projects {
     background: #fff;
@@ -653,13 +671,7 @@ color: #0a2540;
     flex-wrap: wrap;
     width: 100%;
   }
-  .prices {
-    padding-top: 60px;
-    background-size: 900px;
-    background-position: top right;
-    background-repeat: no-repeat;
-    margin-bottom: 40px;
-  }
+
   .card_info .card__list {
     display: none;
   }
@@ -774,9 +786,7 @@ margin-bottom: 12px;
   .cards_3 .card:last-child {
     margin-left: 0;
   }
-  .card__list li:after {
-    top: 11px;
-  }
+
   .card__link a {
     font-size: 14px;
   }
@@ -974,17 +984,163 @@ line-height: 100%;
   .footerinfo {
     padding: 0;
   }
+  .modal_large .modal-dialog {
+    width: 90%;
+  }
+  .card__list li:after {
+    top: -1px;
+  }
+  .cardslist {
+    max-width: 767px;
+    margin: auto;
+  }
+  .container {
+    width: 767px;
+    margin: auto;
+    max-width: 100%;
+  }
 }
 @media (max-width: 1150px) {
 }
 
 @media (max-width: 1023px) {
+  .mapstats__wrapper {
+    padding-top: 6px;
+    padding-bottom: 44px;
+  }
+  .mapstats {
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
+  .modal__content, .modalfooter {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .modal__content {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+  .modalfooter {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+  .modalfooter__wrapper .card__button .btn {
+    min-width: 177px;
+  }
+ 
+  .modal__header {
+    padding-right: 26px;
+  }
+
+  .card__list  {
+    margin-bottom: 18px
+  }
+  .modal {
+    .card__price {
+      flex-wrap: wrap;
+      margin-right: 15px;
+    }
+    .card__price_old {
+      margin-left: 0;
+      margin-bottom: 3px;
+      order: -2 ;
+    }
+    .card__list li {
+      font-weight: 500;
+font-size: 14px;
+line-height: 130%;
+margin-bottom: 18px;
+
+&:last-child {
+  margin-bottom: 0;
+}
+    }
+    
+  }
   h1, .heroblock__text {
     br {
       display: none;
     }
   }
+  button.close {
+    top: 20px;
+    right: 20px;
+    opacity: 0.6;
+  }
+
+  .modal_xlarge {
+    .modal-dialog {
+      width: 100%;
+  
+    }
+  }
+  .modal__cols {
+    display: block;
+    margin: 0 0;
+  }
+
+  .modal__col {
+    width: 100%;
+    padding: 0;
+  }
+
+  .modal__form .form-group textarea {
+    height: 100px;
+  }
+  .modal-open .modal {
+    padding-left: 0 !important;
+  }
+
+  .modal-body {
+    padding: 0;
+  }
+  .modal__form .form-group label {
+    font-size: 12px;
+line-height: 100%;
+  }
+  .modal__form .form-group  {
+    input, select {
+      height: 44px;
+    }
+  }
+  .dropdown__label {
+    height: 44px;
+    font-weight: 500;
+font-size: 14px;
+padding: 0 18px;
+line-height: 40px;
+  }
+  .filebutton {
+    font-size: 14px;
+  }
+  .fileupload {
+    margin: 22px 0;
+  }
+
+  .modal-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+  }
+
+  .modal-subtitle {
+    font-size: 15px;
+  }
+
+  .check label {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 767px) {
+
+  .prices {
+    padding-top: 60px;
+    background-size: 900px;
+    background-position: top right;
+    background-repeat: no-repeat;
+    margin-bottom: 40px;
+  }
+ 
 }
