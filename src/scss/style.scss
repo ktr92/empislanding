@@ -924,8 +924,20 @@ a.bordered {
     white-space: nowrap;
   }
 }
+.headerlogo_image {
+  display: block;
+}
 
 @media (min-width: 1281px) {
+  .headerlogo__logo {
+    display: block;
+  
+  
+    img {
+      height: 41px;
+      width: 169px;
+    }
+  }
   .headerlogo:hover {
     box-shadow: 4px 4px 30px 0 rgba(10, 37, 64, 0.03);
     .headerlogo_image {
@@ -1163,7 +1175,8 @@ color: #ff2f54;
     height: 23px;
     .default {
       position: relative;
-      top: 0;
+      top: 50%;
+      transform: translateY(-50%);
       left: 0;
       transition: 0.5s ease;
       fill: #fff;
@@ -2029,11 +2042,19 @@ margin-top: -25px;
   line-height: 100%;
   color: #0a2540;
   text-align: left;
+  white-space: nowrap;
 }
-
+.card__price_old {
+  white-space: nowrap;
+}
 .card__price-value .rouble {
   font-weight: 600;
 }
+.rouble  {
+  font-weight: 600;
+  font-family: var(--font-family) !important;
+}
+
 
 .prices {
   background-image: url(../img/peices.png);
@@ -2272,13 +2293,16 @@ text-align: center;
   justify-content: center;
   padding: 45px;
   border: 1px solid #eef0f2;
-  transition: all 0.3s ease;
+  transition: transform  0.3s ease;
+  background: #fff;
 
   &:hover {
+    z-index: 99;
+    position: relative;
     background: #fff;
     box-shadow: 15px 4px 60px 0 rgba(10, 37, 64, 0.1);
     border-radius: 13px;
-    border: none;
+/*     border-color: transparent; */
     transform: scale(1.1);
   }
 
@@ -2598,6 +2622,44 @@ text-decoration: underline;
   position: relative;
   z-index: 3;
 }
+
+.heroblock__buttons {
+  display: flex;
+  align-items: center;
+}
+.heroblock__button {
+  margin-right: 12px;
+
+  a {
+    padding: 21px 25px;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+border-radius: 555px;
+
+&:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+  }
+
+  span {
+    padding-left: 10px;
+    font-family: var(--font-family);
+font-weight: 700;
+font-size: 18px;
+line-height: 100%;
+color: #fff;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.projects {
+  margin-top: 100px;
+}
+
 
 #headermobile {
   display: none;

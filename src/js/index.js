@@ -1,5 +1,5 @@
 function initFE() {
-  closeByClickOutside('[data-menu="mainmenu"]', '[data-menutoggle="mainmenu"]');
+  closeByClickOutside('[data-menu="mainmenu"]', '[data-menutoggle="mainmenu"]')
 }
 
 function closeByClickOutside(element, button) {
@@ -21,139 +21,175 @@ function closeByClickOutside(element, button) {
 
 function lazyLoadSrc(selector) {
   const callback = (entries, observer) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       const source = entry.target
       if (entry.intersectionRatio > 0) {
-        if (!source.getAttribute('src')) {
-            source.setAttribute('src', source.dataset.src)
-            observer.unobserve(source)
+        if (!source.getAttribute("src")) {
+          source.setAttribute("src", source.dataset.src)
+          observer.unobserve(source)
         }
       }
     })
   }
   const target = document.querySelectorAll(selector)
   const options = {
-    threshold: 0.4
+    threshold: 0.4,
   }
   let obs = new IntersectionObserver(callback, options)
-  target.forEach(item => {
+  target.forEach((item) => {
     obs.observe(item)
-  }) 
+  })
 }
 
 $(document).ready(function () {
-  new WOW().init();
+  setTimeout(() => {
+    $(".dank-ass-loader").hide()
+  }, 300)
+  new WOW().init()
 
-  
-document.querySelectorAll('.dropdown').forEach(function (item) {
-  item.addEventListener('click', event => {
+  document.querySelectorAll(".dropdown").forEach(function (item) {
+    item.addEventListener("click", (event) => {
+      if (event.target.classList.contains("dropdown__label")) {
+        if (
+          item.querySelector(".dropdown__menu").classList.contains("active")
+        ) {
+          item.querySelector(".dropdown__menu").classList.remove("active")
+          item.querySelector(".dropdown__label").classList.remove("active")
+        } else {
+          item.querySelector(".dropdown__menu").classList.add("active")
+          event.target.classList.add("active")
+        }
+      } else if (event.target.tagName.toLowerCase() == "li") {
+        if (item.querySelector("li.selected")) {
+          item.querySelector("li.selected").classList.remove("selected")
+        }
 
-    if (event.target.classList.contains('dropdown__label')) {
-      if (item.querySelector('.dropdown__menu').classList.contains('active')) {
-        item.querySelector('.dropdown__menu').classList.remove('active')
-        item.querySelector('.dropdown__label').classList.remove('active')
-      } else {
-        item.querySelector('.dropdown__menu').classList.add('active')
-        event.target.classList.add('active')
+        event.target.classList.add("selected")
+        item.querySelector(".dropdown__label").classList.remove("active")
+        item.querySelector(".dropdown__label").textContent =
+          event.target.textContent
+        item.querySelector(".dropdown_value").value = event.target.textContent
+        item.querySelector(".dropdown__menu").classList.remove("active")
       }
+    })
+  })
 
-    } else if (event.target.tagName.toLowerCase() == 'li') {
-      if (item.querySelector('li.selected')) {
-        item.querySelector('li.selected').classList.remove('selected')
+  window.onclick = function (event) {
+    var dropdown = document.querySelectorAll(".dropdown__label.active")
+    dropdown.forEach(function (drop) {
+      if (event.target != drop) {
+        document
+          .querySelectorAll(".dropdown__menu.active")
+          .forEach(function (item) {
+            item.classList.remove("active")
+          })
+        document
+          .querySelectorAll(".dropdown__label.active")
+          .forEach(function (item) {
+            item.classList.remove("active")
+          })
       }
-
-      event.target.classList.add('selected')
-      item.querySelector('.dropdown__label').classList.remove('active')
-      item.querySelector('.dropdown__label').textContent = event.target.textContent
-      item.querySelector('.dropdown_value').value = event.target.textContent
-      item.querySelector('.dropdown__menu').classList.remove('active')
-    }
-  })
-})
-
-
-
-window.onclick = function (event) {
-  var dropdown = document.querySelectorAll('.dropdown__label.active')
-  dropdown.forEach(function (drop) {
-    if (event.target != drop) {
-      document.querySelectorAll('.dropdown__menu.active').forEach(function (item) {
-        item.classList.remove('active')
-      })
-      document.querySelectorAll('.dropdown__label.active').forEach(function (item) {
-        item.classList.remove('active')
-      })
-    }
-
-
-
-
-
-  })
-}
-
-$(".fileupload input[type=file]").change(function()	{		
-  if (this.files[0]) {
-    var filename = $(this).val().replace(/.*\\/, ""); 
-    /* $(this).siblings('span').empty(); */
-    $(this).closest('.fileupload').find('.filename').remove()
-    $(this).closest('.fileupload').append('<span class="filename"> ' + filename + ' ' + ' </span>');
-    $('.file-error').html("");
-    $('.file-upload span').css('text-transform', 'none');
-    $('.changefile').css('display', 'block');
+    })
   }
-  });
 
-  $('.headerlogo').on('click', function(e) {
-    $(this).toggleClass('active')
+  $(".fileupload input[type=file]").change(function () {
+    if (this.files[0]) {
+      var filename = $(this).val().replace(/.*\\/, "")
+      /* $(this).siblings('span').empty(); */
+      $(this).closest(".fileupload").find(".filename").remove()
+      $(this)
+        .closest(".fileupload")
+        .append('<span class="filename"> ' + filename + " " + " </span>")
+      $(".file-error").html("")
+      $(".file-upload span").css("text-transform", "none")
+      $(".changefile").css("display", "block")
+    }
   })
 
-  function initSlider(selector, count, fade, nav, left, right, resp) {
-    var $status = $(nav);
-    var $slickElement = $(selector);
-  
-    $slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
-      // no dots -> no slides
-      if(!slick.$dots){
-        return;
+  $(".headerlogo").on("click", function (e) {
+    $(this).toggleClass("active")
+  })
+
+  function initSlider(selector, count, fade, nav, left, right, resp, options) {
+    var $status = $(nav)
+    var $slickElement = $(selector)
+
+    $slickElement.on(
+      "init reInit afterChange",
+      function (event, slick, currentSlide, nextSlide) {
+        // no dots -> no slides
+        if (!slick.$dots) {
+          return
+        }
+
+        //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+        var i = (currentSlide ? currentSlide : 0) + 1
+        // use dots to get some count information
+        $status.html(
+          '<span class="pagingInfo_active">' +
+            i +
+            "</span>" +
+            '<span class="pagingInfo_default">' +
+            "/ " +
+            slick.$dots[0].children.length +
+            "</span>"
+        )
       }
-      
-      //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
-      var i = (currentSlide ? currentSlide : 0) + 1;
-      // use dots to get some count information
-      $status.html('<span class="pagingInfo_active">' + i + '</span>' + '<span class="pagingInfo_default">' + '/ ' +  (slick.$dots[0].children.length) + '</span>');
-    });
-  
+    )
+
     $slickElement.slick({
       infinite: false,
       slidesToShow: count,
       slidesToScroll: 1,
-      autoplay: false,
       fade: fade,
       dots: true,
-       prevArrow: left,
+      prevArrow: left,
       nextArrow: right,
-      responsive: resp
-    });
-  };
+      responsive: resp,
+      ...options,
+    })
+  }
 
-  initSlider('.projects__slider', 1, true, '.pagingInfo', '.projects__left', '.projects__right')
-  initSlider('.reviews__slider', 2, false, '.pagingInfo_reviews', '.reviews__left', '.reviews__right', [
+  initSlider(
+    ".projects__slider",
+    1,
+    true,
+    ".pagingInfo",
+    ".projects__left",
+    ".projects__right",
+    [],
     {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true
-      }
+      autoplay: true,
+      autoplaySpeed: 2000,
+      pauseOnHover: true,
     }
-  ])
+  )
+  initSlider(
+    ".reviews__slider",
+    2,
+    false,
+    ".pagingInfo_reviews",
+    ".reviews__left",
+    ".reviews__right",
+    [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+    ],
+    {
+      autoplay: true,
+      autoplaySpeed: 2000,
+      pauseOnHover: true,
+    }
+  )
 
-
- 
-
- /*  $('.projects__slider').slick({
+  /*  $('.projects__slider').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     fade: true,
@@ -204,38 +240,35 @@ $(".fileupload input[type=file]").change(function()	{
     }
   })
 
-
-  $('#demo').gradient({
-    colors: ['#0CC4FB', '#2295F8', '#2858E4', '#193FAB']
-  });
+  $("#demo").gradient({
+    colors: ["#0CC4FB", "#2295F8", "#2858E4", "#193FAB"],
+  })
 
   $("[data-menutoggle]").on("click", function (e) {
-    e.preventDefault();
-    let menu = $(this).data("menutoggle");
-    $(`[data-menu=${menu}]`).toggleClass("active");
-    $(this).toggleClass("active");
-    $(".jsbackdrop").toggleClass("active");
-    $("body").toggleClass("expmenu");
-  });
+    e.preventDefault()
+    let menu = $(this).data("menutoggle")
+    $(`[data-menu=${menu}]`).toggleClass("active")
+    $(this).toggleClass("active")
+    $(".jsbackdrop").toggleClass("active")
+    $("body").toggleClass("expmenu")
+  })
   $(".jsbackdrop").on("click", function (e) {
-    $(this).removeClass("active");
-    $("[data-menu]").removeClass("active");
-    $("[data-menutoggle]").removeClass("active");
-    $("body").toggleClass("expmenu");
-  });
+    $(this).removeClass("active")
+    $("[data-menu]").removeClass("active")
+    $("[data-menutoggle]").removeClass("active")
+    $("body").toggleClass("expmenu")
+  })
 
-
- 
   $("a.scrollTo").click(function () {
-
-    var destination = $($(this).attr("href")).offset().top - 30;
-    $("html:not(:animated),body:not(:animated)").animate({
-      scrollTop: destination
-    }, 1100);
-    return false;
-  });
-
- 
+    var destination = $($(this).attr("href")).offset().top - 30
+    $("html:not(:animated),body:not(:animated)").animate(
+      {
+        scrollTop: destination,
+      },
+      1100
+    )
+    return false
+  })
 
   $(".jsbackdrop").on("click", function (e) {
     $(this).removeClass("active")
@@ -244,15 +277,13 @@ $(".fileupload input[type=file]").change(function()	{
   })
 
   $("input[type=tel]").mask("7 (999) 999-99-99")
- 
 })
-
 
 window.addEventListener("load", function () {
   initFE()
 })
 
-document.addEventListener('DOMContentLoaded', function() {
-  lazyLoadSrc('img');
-  lazyLoadSrc('iframe');
+document.addEventListener("DOMContentLoaded", function () {
+  lazyLoadSrc("img")
+  lazyLoadSrc("iframe")
 })
