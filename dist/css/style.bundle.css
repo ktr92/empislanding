@@ -4027,12 +4027,19 @@ dt {
   .heroblock__button span {
     font-weight: 400; }
   .heroblock__buttons {
-    flex-wrap: wrap; }
+    /*     flex-wrap: wrap; */ }
   .heroblock__button {
     width: 100%;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    margin-right: 5px; }
+    .heroblock__button img {
+      max-width: 14px;
+      min-width: 14px;
+      height: 14px; }
+  .heroblock__button span {
+    padding-left: 5px;
+    font-size: 10px; }
   .heroblock__button a {
-    width: 230px;
     max-width: 100%;
     display: flex;
     justify-content: center; }
@@ -4061,8 +4068,10 @@ dt {
     font-size: 40px; }
   .heroblock__text {
     font-size: 16px; }
+  .heroblock__button a {
+    padding: 15px 5px; }
   .heroblock__button span {
-    font-size: 12px; }
+    font-size: 11px; }
   .animblock {
     transform: scale(0.8); }
   .indexmain__wrapper {
