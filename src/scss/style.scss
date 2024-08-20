@@ -200,9 +200,9 @@ img {
         text-align: center;
         color: #2e333e;
 
-        &:hover {
+      /*   &:hover {
           color: $orange;
-        }
+        } */
       }
     }
   }
@@ -2057,7 +2057,7 @@ margin-top: -25px;
 
 
 .prices {
-  background-image: url(../img/peices.png);
+  background-image: url(../img/mainbg.jpg);
   background-size: cover;
 /*   background-repeat: no-repeat;
   background-position: center; */
@@ -2067,6 +2067,7 @@ margin-top: -25px;
 }
 
 .prices__wrapper {
+  
 }
 
 .offerblock__cards {
@@ -2215,8 +2216,8 @@ dt {
     display: inline-block;
 
     &:hover {
-      color: #7018FF;
-      border-color: #7018FF;
+      color: #0077c1;
+      border-color: #0077c1;
     }
   }
 
@@ -2669,6 +2670,50 @@ color: #fff;
 
   
     }
+
+    @media (min-width: 1024px) {
+      .prices {
+        /*   height: 1040px; */
+          -webkit-transform: skewY(-3deg);
+          -moz-transform: skewY(-3deg);
+          -ms-transform: skewY(-3deg);
+          -o-transform: skewY(-3deg);
+          transform: skewY(-3deg);
+          
+          margin-top: -30px;
+    
+          .container {
+            -webkit-transform: skewY(3deg);
+            -moz-transform: skewY(3deg);
+            -ms-transform: skewY(3deg);
+            -o-transform: skewY(3deg);
+            transform: skewY(3deg);
+          }
+        }
+    
+        .fitches {
+          padding-top: 100px;
+          background: #fff;
+          -webkit-transform: skewY(3deg);
+          -moz-transform: skewY(3deg);
+          -ms-transform: skewY(3deg);
+          -o-transform: skewY(3deg);
+          transform: skewY(3deg);
+          
+          margin-top: -190px;
+    
+          .container {
+            -webkit-transform: skewY(-3deg);
+            -moz-transform: skewY(-3deg);
+            -ms-transform: skewY(-3deg);
+            -o-transform: skewY(-3deg);
+            transform: skewY(-3deg);
+          }
+        }
+    }
+
+   
+
 
     .mapstats {
       -webkit-transform: skewY(-3deg);

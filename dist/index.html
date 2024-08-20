@@ -251,7 +251,7 @@
         </div><!-- /.header__nav -->
         <div class="header__buttons">
           <div class="header__phone"><a href="tel:+74951183013">+7 495 118 30 13</a></div><!-- /.header__phone -->
-          <div class="header__callback"><a href="#modal__order" data-toggle="modal"  class='btn_main'>Заказать звонок</a></div><!-- /.header__callback -->
+          <div class="header__callback"><a href="#modal__callback" data-toggle="modal"  class='btn_main'>Заказать звонок</a></div><!-- /.header__callback -->
         </div><!-- /.header__buttons -->
       </div><!-- /.header__panel -->
     </div><!-- /.header__items -->
@@ -1335,7 +1335,7 @@
 </div>
 
 
-<div id="modal__order" class="modal modal_xlarge fade " tabindex="-1" >
+<div id="modal__order" class="modal modal_xlarge fade " tabindex="-1">
   <div class="modal-dialog">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
       <img src="img/modalclose.svg">
@@ -1375,16 +1375,16 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="">Ваще имя <span class="red">*</span></label>
+                    <label for="">Ваше имя <span class="red">*</span></label>
                     <input required="" name="NAME" placeholder="" data-entity="required">
                   </div>
                   <div class="form-group ">
-                    <label for="">Телефон <span class="red">*</span></label> <input type="tel" required="" name="PHONE" placeholder=""
-                      data-entity="required">
+                    <label for="">Телефон <span class="red">*</span></label> <input type="tel" required="" name="PHONE"
+                      placeholder="" data-entity="required">
                   </div>
                   <div class="form-group">
-                    <label for="">E-mail <span class="red">*</span></label> <input type="email" required="" name="EMAIL" placeholder=""
-                      data-entity="required">
+                    <label for="">E-mail <span class="red">*</span></label> <input type="email" required="" name="EMAIL"
+                      placeholder="" data-entity="required">
                   </div>
                   <div class="form-group"><label for="">Ссылка на сайт</label> <input name="SITE" data-entity="required"
                       placeholder=""></div>
@@ -1402,17 +1402,17 @@
                       </label>
                     </div>
                   </div>
-                 
+
 
                   <div class="form-group form-group_last">
-                      <button  class="btn btn_main btn_icon " type="submit">
-                        <span class="btntext">Оставить заявку</span>
-                        <span class="btnicon">
-                          <img src="img/empisicon.svg" alt="" class="default">
-                          <img src="img/empisicon.svg" alt="" class="active">
-    
-                        </span><!-- /.iconbtn -->
-                      </button>
+                    <button class="btn btn_main btn_icon " type="submit">
+                      <span class="btntext">Оставить заявку</span>
+                      <span class="btnicon">
+                        <img src="img/empisicon.svg" alt="" class="default">
+                        <img src="img/empisicon.svg" alt="" class="active">
+
+                      </span><!-- /.iconbtn -->
+                    </button>
                   </div>
                   <div class="form__input">
                     <div class="check">
@@ -1429,6 +1429,61 @@
       </div>
     </div>
   </div>
+</div>
+
+<div id="modal__callback" class="modal  fade " tabindex="-1">
+  <div class="modal-dialog">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+      <img src="img/modalclose.svg">
+    </button>
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="modal__content">
+          <div class="modal__header">
+            <div class="modal-title">Заказать звонок</div>
+          </div>
+          <div class="modal__form">
+
+            <form action="" method="post" data-entity="ajax-form" data-url="">
+              <!-- <div class="loader__wrapper">
+                <div class="loader">Загрузка...</div>
+              </div> -->
+              <input type="hidden" value="" name="CAPTCHA">
+
+                  <div class="form-group">
+                    <label for="">Ваше имя <span class="red">*</span></label>
+                    <input required="" name="NAME" placeholder="" data-entity="required">
+                  </div>
+                  <div class="form-group ">
+                    <label for="">Телефон <span class="red">*</span></label> <input type="tel" required="" name="PHONE"
+                      placeholder="" data-entity="required">
+                  </div>
+
+                  <div class="form-group form-group_last">
+                    <button class="btn btn_main btn_icon " type="submit">
+                      <span class="btntext">Оставить заявку</span>
+                      <span class="btnicon">
+                        <img src="img/empisicon.svg" alt="" class="default">
+                        <img src="img/empisicon.svg" alt="" class="active">
+
+                      </span><!-- /.iconbtn -->
+                    </button>
+                  </div>
+
+              <div class="form__input">
+                <div class="check">
+                  <input type="checkbox" id="checkbox_modal_2" checked="checked">
+                  <label for="checkbox_modal_2">Даю свое согласие на обработку <a href="/policy/">Персональных
+                      данных</a></label>
+                </div>
+              </div>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 <script src="js/index.js"></script>

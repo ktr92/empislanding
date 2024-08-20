@@ -182,7 +182,7 @@ $(document).ready(function () {
     ".projects__right",
     [],
     {
-      autoplay: true,
+      autoplay: false,
       autoplaySpeed: 2000,
       pauseOnHover: true,
     }
@@ -206,7 +206,7 @@ $(document).ready(function () {
       },
     ],
     {
-      autoplay: true,
+      autoplay: false,
       autoplaySpeed: 2000,
       pauseOnHover: true,
     }
@@ -220,6 +220,38 @@ $(document).ready(function () {
     prevArrow: '.projects__left',
     nextArrow: '.projects__right'
   }); */
+
+
+  function addAutoplay(selector) {
+    const callback = (entries, observer) => {
+      entries.forEach(entry => {
+        const source = entry.target
+        console.log(source)
+        if (entry.intersectionRatio > 0) {
+          if (source) {
+            $(selector).slick('slickSetOption', 'autoplay', true);
+            $(selector).slick( 'refresh' );
+            observer.unobserve(source)
+          }
+        }
+      })
+    }
+    const target = document.querySelectorAll(selector)
+    const options = {
+      threshold: 0.4
+    }
+    let obs = new IntersectionObserver(callback, options)
+    target.forEach(item => {
+      obs.observe(item)
+    }) 
+  }
+  
+  
+    addAutoplay('.projects__slider')
+    addAutoplay('.reviews__slider')
+
+  
+
 
   var something = (function () {
     var executed = false
@@ -290,6 +322,10 @@ $(document).ready(function () {
       },
       1100
     )
+    $('.jsbackdrop ').removeClass('active')
+    $("[data-menu]").removeClass("active")
+    $("[data-menutoggle]").removeClass("active")
+    $("body").removeClass("expmenu")
     return false
   })
 
@@ -310,6 +346,8 @@ document.addEventListener("DOMContentLoaded", function () {
   lazyLoadSrc("img")
   lazyLoadSrc("iframe")
 })
+
+  
 
 })();
 

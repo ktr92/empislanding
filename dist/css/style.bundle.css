@@ -1282,9 +1282,10 @@ img {
       font-weight: 400;
       font-size: 18px;
       text-align: center;
-      color: #2e333e; }
-      .mainmenu ul li a:hover {
-        color: #fc6a16; }
+      color: #2e333e;
+      /*   &:hover {
+          color: $orange;
+        } */ }
 
 /* .btn {
   position: relative;
@@ -2806,7 +2807,7 @@ h2 {
   font-family: var(--font-family) !important; }
 
 .prices {
-  background-image: url(../img/peices.png);
+  background-image: url(../img/mainbg.jpg);
   background-size: cover;
   /*   background-repeat: no-repeat;
   background-position: center; */ }
@@ -2932,8 +2933,8 @@ dt {
     padding-bottom: 2px;
     display: inline-block; }
     .card__link a:hover {
-      color: #7018FF;
-      border-color: #7018FF; }
+      color: #0077c1;
+      border-color: #0077c1; }
 
 .card__price {
   margin-bottom: 10px; }
@@ -3278,6 +3279,37 @@ dt {
 
 #headermobile {
   display: none; }
+
+@media (min-width: 1024px) {
+  .prices {
+    /*   height: 1040px; */
+    -webkit-transform: skewY(-3deg);
+    -moz-transform: skewY(-3deg);
+    -ms-transform: skewY(-3deg);
+    -o-transform: skewY(-3deg);
+    transform: skewY(-3deg);
+    margin-top: -30px; }
+    .prices .container {
+      -webkit-transform: skewY(3deg);
+      -moz-transform: skewY(3deg);
+      -ms-transform: skewY(3deg);
+      -o-transform: skewY(3deg);
+      transform: skewY(3deg); }
+  .fitches {
+    padding-top: 100px;
+    background: #fff;
+    -webkit-transform: skewY(3deg);
+    -moz-transform: skewY(3deg);
+    -ms-transform: skewY(3deg);
+    -o-transform: skewY(3deg);
+    transform: skewY(3deg);
+    margin-top: -190px; }
+    .fitches .container {
+      -webkit-transform: skewY(-3deg);
+      -moz-transform: skewY(-3deg);
+      -ms-transform: skewY(-3deg);
+      -o-transform: skewY(-3deg);
+      transform: skewY(-3deg); } }
 
 .mapstats {
   -webkit-transform: skewY(-3deg);
@@ -3801,9 +3833,10 @@ dt {
     min-height: 24px; }
   .btn_icon .btnicon {
     height: 23px; }
-  .btn_icon .btnicon .default {
+  /*  .btn_icon .btnicon .default {
     transform: none;
-    top: 0; }
+    top: 0;
+  } */
   .projectcard__main .btn_icon {
     padding: 9px 0; }
   .projectcard__button {
@@ -4165,7 +4198,12 @@ dt {
   .modal-subtitle {
     font-size: 15px; }
   .check label {
-    font-size: 12px; } }
+    font-size: 12px; }
+  .projects__wrapper {
+    padding-bottom: 36px; }
+  .headermenu ul li a:hover {
+    background: none;
+    border-color: transparent; } }
 
 @media (max-width: 767px) {
   .prices {
@@ -4173,7 +4211,8 @@ dt {
     background-size: 900px;
     background-position: top right;
     background-repeat: no-repeat;
-    margin-bottom: 40px; } }
+    margin-bottom: 40px;
+    background-image: url(../img/peices.png); } }
 
 
 /*# sourceMappingURL=style.bundle.css.map*/
